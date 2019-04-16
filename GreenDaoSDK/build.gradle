@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        //在下面添加这句话，然后重新编译，就OK了。
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+    }
+
+    greendao {
+        schemaVersion 1 //数据库版本号
+        daoPackage 'com.database.greenDao.db'
+        // 设置DaoMaster、DaoSession、Dao 包名
+        targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
+        //generateTests false //设置为true以自动生成单元测试。
+        //targetGenDirTests 'src/main/java' //默认应存储生成的单元测试的基本目录。为 src / androidTest / java。
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'org.greenrobot:greendao:3.2.2' // add library
+    provided "org.projectlombok:lombok:1.16.18"
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+}

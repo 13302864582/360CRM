@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //appcompact依赖
+    api rootProject.ext.dependencies.appcompat
+    api rootProject.ext.dependencies.constraintlayout
+    //ButterKnife依赖
+    api rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifecompiler
+
+
+    api rootProject.ext.dependencies.lifecycle //生命周期依赖
+
+    api rootProject.ext.dependencies.modulebus   //组件通信
+
+    api rootProject.ext.dependencies.material   //材料设计
+
+    api rootProject.ext.dependencies.arouter  //组件跳转
+
+    api 'com.github.bumptech.glide:glide:4.9.0'
+    //Glide
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    //
+
+    api project(':httpsdk')
+
+    /* api rootProject.ext.dependencies.rxjava  // 必要rxjava2依赖
+
+        api rootProject.ext.dependencies.rxandroid  // 必要rxandrroid依赖，切线程时需要用到
+
+        api rootProject.ext.dependencies.retrofit   // 必要retrofit依赖
+
+        api rootProject.ext.dependencies.adapterRxjava  // 必要依赖，和Rxjava结合必须用到，下面会提到
+
+        api rootProject.ext.dependencies.converterGson  // 必要依赖，解析json字符所用
+
+        api project(':GreenDaoSDK')*/
+}
+

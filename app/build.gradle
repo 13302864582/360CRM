@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        applicationId "com.fz.app"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*packagingOptions {
+        exclude 'META-INF/androidx.versionedparcelable_versionedparcelable.version'
+        exclude 'META-INF/androidx.core_core.version'
+    }*/
+    /*sourceSets {
+     main{
+         if (rootProject.ext.moduleShopMall) {
+             manifest.srcFile 'src/main/module/AndroidManifest.xml'
+         } else {
+             manifest.srcFile 'src/main/AndroidManifest.xml'
+             java {
+                 //排除java/debug文件夹下的所有文件
+                 exclude '*module'
+             }
+         }
+         manifest.srcFile 'AndroidManifest.xml'
+         java.srcDirs = ['src']
+         resources.srcDirs = ['src/main/res']
+         aidl.srcDirs = ['src']
+         renderscript.srcDirs = ['src']
+         res.srcDirs = ['res/main/res']
+         assets.srcDirs = ['assets'] }
+    }*/
+    }
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    if (!rootProject.ext.isMoudle) {
+        implementation project(':moudlea')
+        implementation project(':moudleb')
+    }
+    annotationProcessor rootProject.ext.dependencies.butterknifecompiler
+}
+
+
