@@ -2,6 +2,7 @@ package com.httpsdk.http;
 
 import java.util.concurrent.TimeUnit;
 
+import me.jessyan.retrofiturlmanager.RetrofitUrlManager;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -18,11 +19,12 @@ public class Http {
     /**
      * 构造方法
      */
-    public Http(OkHttpClient client,String baseUrl) {
+    public Http(OkHttpClient.Builder client,String baseUrl) {
         if(client==null){
             client=initOkHttp();
         }
-        retrofit = initRetrofit(client,baseUrl);
+        OkHttpClient okHttpClient=client.build();
+        retrofit = initRetrofit(okHttpClient,baseUrl);
     }
 
 
@@ -42,27 +44,25 @@ public class Http {
                .addConverterFactory(GsonConverterFactory.create())
                .build();
         return builder.build();
-
     }
 
     /**
      * 初始化okhttp
      */
-    private OkHttpClient initOkHttp() {
+    private OkHttpClient.Builder initOkHttp() {
         return new OkHttpClient().newBuilder()
                 .readTimeout(Constans.DEFAULT_TIME, TimeUnit.SECONDS)//设置读取超时时间
                 .connectTimeout(Constans.DEFAULT_TIME, TimeUnit.SECONDS)//设置请求超时时间
                 .writeTimeout(Constans.DEFAULT_TIME,TimeUnit.SECONDS)//设置写入超时时间
                 .addInterceptor(new LogInterceptor())//添加打印拦截器
-                .retryOnConnectionFailure(true)//设置出现错误进行重新连接。
-                .build();
+                .retryOnConnectionFailure(true);//设置出现错误进行重新连接
     }
 
 
     /**
      * 单例（双重检查）初始化
      */
-    public static Http init(OkHttpClient client,String baseUrl){
+    public static Http init(OkHttpClient.Builder client,String baseUrl){
         if(INSTANCE==null){
             synchronized (Http.class){
                 if (INSTANCE==null){

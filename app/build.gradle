@@ -52,6 +52,7 @@ dependencies {
         implementation project(':moudlea')
         implementation project(':moudleb')
     }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
 }
 

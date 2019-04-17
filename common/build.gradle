@@ -32,7 +32,6 @@ dependencies {
     api rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
 
-
     api rootProject.ext.dependencies.lifecycle //生命周期依赖
 
     api rootProject.ext.dependencies.modulebus   //组件通信
@@ -41,23 +40,15 @@ dependencies {
 
     api rootProject.ext.dependencies.arouter  //组件跳转
 
+    api rootProject.ext.dependencies.permission //权限
+
+    api project(':httpsdk') //网络模块
+
+   // api 'com.qmuiteam:qmui:1.2.0'
+    //api project(':GreenDaoSDK')
     api 'com.github.bumptech.glide:glide:4.9.0'
-    //Glide
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-    //
 
-    api project(':httpsdk')
-
-    /* api rootProject.ext.dependencies.rxjava  // 必要rxjava2依赖
-
-        api rootProject.ext.dependencies.rxandroid  // 必要rxandrroid依赖，切线程时需要用到
-
-        api rootProject.ext.dependencies.retrofit   // 必要retrofit依赖
-
-        api rootProject.ext.dependencies.adapterRxjava  // 必要依赖，和Rxjava结合必须用到，下面会提到
-
-        api rootProject.ext.dependencies.converterGson  // 必要依赖，解析json字符所用
-
-        api project(':GreenDaoSDK')*/
+    //api 'com.github.goweii:AnyLayer:v2.3.0'  //dialog
+    api 'com.afollestad.material-dialogs:core:0.9.6.0'
 }
 

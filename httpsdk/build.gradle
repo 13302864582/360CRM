@@ -34,4 +34,6 @@ dependencies {
     api rootProject.ext.dependencies.converterGson  // 必要依赖，解析json字符所用
 
     api rootProject.ext.dependencies.rxlifecycle // rxlifecycle依赖
+
+    api 'me.jessyan:retrofit-url-manager:1.4.0'
 }
