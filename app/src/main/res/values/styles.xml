@@ -1,13 +1,12 @@
 <resources>
-
+    <!--Theme.AppCompat.Light.DarkActionBar-->
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
 
     <!--自定义的颜色部分-->
     <color name="font_hint">#989898</color>

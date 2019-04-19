@@ -1,7 +1,6 @@
 package com.example.mvp;
 
-import com.example.baselibrary.mvp.BaseActivityPresenter;
-import com.example.baselibrary.mvp.BasePresenter;
+import com.example.baselibrary.base.BaseActivityPresenter;
 import com.example.baselibrary.mvp.BaseView;
 
 public interface MainContract {

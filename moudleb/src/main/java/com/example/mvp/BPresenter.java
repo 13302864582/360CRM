@@ -1,8 +1,9 @@
 package com.example.mvp;
 
+import android.os.Bundle;
 import android.util.Log;
 
-import com.example.baselibrary.mvp.BaseObserver;
+import com.example.baselibrary.base.BaseRxObserver;
 import com.example.moudleb.TestBean;
 import com.httpsdk.http.RxHelper;
 
@@ -14,7 +15,7 @@ public class BPresenter extends BContract.Presenter {
         if (mModel != null && mView != null) {
             mModel.getmes()
                     .compose(RxHelper.<TestBean>observableIO2Main(context))
-                    .subscribe(new BaseObserver<TestBean>() {
+                    .subscribe(new BaseRxObserver<TestBean>() {
                         @Override
                         public void onSuccess(TestBean testBean) {
                             Log.d(TAG1, "onNext: ");
@@ -57,5 +58,10 @@ public class BPresenter extends BContract.Presenter {
     @Override
     public void onDestroy () {
         Log.d(TAG1, "onDestroy: ");
+    }
+
+    @Override
+    public void onCrete(Bundle savedInstanceState) {
+
     }
 }

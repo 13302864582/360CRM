@@ -2,17 +2,10 @@ package com.example.mvp;
 
 import android.util.Log;
 import android.view.MenuItem;
-import com.example.baselibrary.mvp.BaseObserver;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.httpsdk.http.RxHelper;
 
 import androidx.annotation.NonNull;
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainPresenter extends MainContract.Presenter implements BottomNavigationView.OnNavigationItemSelectedListener {
     private static final String TAG1 = "APresenter";

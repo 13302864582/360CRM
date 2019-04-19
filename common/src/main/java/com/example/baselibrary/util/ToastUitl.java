@@ -2,7 +2,8 @@ package com.example.baselibrary.util;
 
 import android.content.Context;
 import android.widget.Toast;
-import com.example.baselibrary.mvp.BaseApplication;
+
+import com.example.baselibrary.base.BaseApplication;
 
 public class ToastUitl {
     private static Toast toast;

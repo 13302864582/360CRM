@@ -21,10 +21,6 @@ android {
         }
     }
 
-    /*packagingOptions {
-        exclude 'META-INF/androidx.versionedparcelable_versionedparcelable.version'
-        exclude 'META-INF/androidx.core_core.version'
-    }*/
     /*sourceSets {
      main{
          if (rootProject.ext.moduleShopMall) {
@@ -49,7 +45,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     if (!rootProject.ext.isMoudle) {
-        implementation project(':moudlea')
         implementation project(':moudleb')
     }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'

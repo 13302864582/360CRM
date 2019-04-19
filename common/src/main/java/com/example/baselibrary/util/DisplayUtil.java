@@ -10,7 +10,7 @@ import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
-import com.example.baselibrary.mvp.BaseApplication;
+import com.example.baselibrary.base.BaseApplication;
 
 public class DisplayUtil {
     private DisplayUtil() {

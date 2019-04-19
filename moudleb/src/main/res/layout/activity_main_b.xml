@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <TextView
-        android:id="@+id/fzb"
+    <!--顶部的需要沉浸的图片View 或其他东西 视频View  等 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/timg"
+        android:scaleType="centerCrop" />
+
+    <!-- app:use_type="use_padding_top 向上paddingTop状态栏高度-->
+   <!-- <com.example.baselibrary.mvp.StatusBarHeightView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="this is moudle Bb"
-        android:layout_gravity="center"
-        android:textSize="25sp"/>
+        android:layout_alignParentEnd="true"
+        app:use_type="use_padding_top"
+        android:orientation="vertical" >
+        &lt;!&ndash;这里放内容布局或View&ndash;&gt;
+        <ImageView
+            android:id="@+id/ivUserShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:src="@mipmap/timg" />
+
+    </com.example.baselibrary.mvp.StatusBarHeightView>-->
+
+
+    <com.example.baselibrary.circleMenu.GooeyMenu
+        android:id="@+id/gooey_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fab_radius="@dimen/big_circle_radius"
+        app:gap_between_menu_fab="@dimen/min_gap"
+        app:menu_radius="@dimen/small_circle_radius"
+        app:no_of_menu="3"
+        app:menu_drawable="@array/drawable_array"/>
 </LinearLayout>

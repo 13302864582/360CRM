@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mine_Recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            app:labelVisibilityMode="labeled"
+            app:itemTextAppearanceActive="@style/bottom_selected_text"
+            app:itemTextAppearanceInactive="@style/bottom_normal_text"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:id="@+id/bottom_navigation"
+            app:itemBackground="@null"
+            app:menu="@menu/menu_bottom_navigation_view"
+            >
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </RelativeLayout>
+</LinearLayout>

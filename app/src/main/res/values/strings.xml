@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MoudleTest</string>
+
+    <!--模块：我的   菜单item-->
+    <string name="mine_role_permission">角色权限</string>
+    <string name="mine_my_file">我的文件</string>
+    <string name="mine_my_channel">我的渠道</string>
+    <string name="mine_my_output">我的产出</string>
+    <string name="mine_help_doc">帮助说明</string>
+
+
 </resources>

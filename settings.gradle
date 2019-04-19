@@ -1,1 +1,1 @@
-include ':app', ':moudlea', ':moudleb', ':common', ':GreenDaoSDK', ':httpsdk'
+include ':app', ':moudleb', ':common', ':GreenDaoSDK', ':httpsdk'

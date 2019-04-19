@@ -117,7 +117,7 @@ public class GlideUtils {
         //项目中有很多需要先下载图片然后再做一些合成的功能，比如项目中出现的图文混排
 
         //设置要加载的内容
-      /*  public static void loadImageViewContent(Context mContext, String path, SimpleTarget<glidedrawable> simpleTarget) {
+        /*public static void loadImageViewContent(Context mContext, String path, SimpleTarget<glidedrawable> simpleTarget) {
             Glide.with(mContext).load(path).centerCrop().into(simpleTarget);
         }*/
 

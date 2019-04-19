@@ -1,19 +1,17 @@
 package com.example.moudletest;
 
-import com.example.baselibrary.mvp.BaseApplication;
+import com.example.baselibrary.base.BaseApplication;
 import com.example.baselibrary.util.SpCache;
 import com.httpsdk.http.CacheInterceptor;
 import com.httpsdk.http.Constans;
 import com.httpsdk.http.Http;
 import com.httpsdk.http.LogInterceptor;
 import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import okhttp3.Cache;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+
+import static com.example.baselibrary.base.BaseApplication.getAppContext;
 
 public class MyApplication extends BaseApplication {
     @Override

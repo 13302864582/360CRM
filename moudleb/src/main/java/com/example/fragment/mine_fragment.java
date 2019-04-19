@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.baselibrary.base.BaseMVPFragment;
 import com.example.baselibrary.lifecycle.LifeCycleFragmentFactory;
-import com.example.baselibrary.mvp.BaseFragment;
 import com.example.moudleb.R;
 import com.example.mvp.BContract;
 import com.example.mvp.BModel;
@@ -14,7 +14,7 @@ import com.example.mvp.BPresenter;
 import androidx.annotation.Nullable;
 
 
-public class mine_fragment extends BaseFragment<BPresenter, BModel> implements BContract.View {
+public class mine_fragment extends BaseMVPFragment<BPresenter, BModel> implements BContract.View {
     private static final String TAG = "home_fragment";
     private TextView txt;
 
@@ -25,7 +25,8 @@ public class mine_fragment extends BaseFragment<BPresenter, BModel> implements B
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.moudle_mine;
+        //return R.layout.moudle_mine;
+        return 0;
     }
 
     @Override

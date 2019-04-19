@@ -148,7 +148,7 @@ public class SpCache {
             editor.putLong(key, (Long) t);
         } else
         {
-            Log.d(TAG, "you may be put a invalid object :" + t);
+            LogUtils.d("===SP:you may be put a invalid object :");
             editor.putString(key, t.toString());
         }
 
@@ -215,7 +215,7 @@ public class SpCache {
                 if (sApplyMethod != null)
                 {
                     sApplyMethod.invoke(editor);
-                    Log.d(TAG, "============apply");
+                    LogUtils.d( "============SPapply");
                     return;
                 }
             } catch (IllegalArgumentException e)
@@ -233,7 +233,7 @@ public class SpCache {
                 protected Void doInBackground(Void... params)
                 {
                     editor.commit();
-                    Log.d(TAG, "============commit");
+                    LogUtils.d( "============SPcommit");
                     return null;
                 }
             }.execute();
