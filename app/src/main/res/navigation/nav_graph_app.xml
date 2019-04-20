@@ -2,8 +2,21 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph_app.xml">
+    app:startDestination="@id/splashFragment"
+    >
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.lantel.Splash.SplashFragment"
+        android:label="fragment_page_splash"
+        >
+        <action
+            android:id="@+id/action_page1"
+            app:destination="@id/page1Fragment"
+            app:clearTask="true"
+            />
+
+    </fragment>
+
     <fragment
         android:id="@+id/page1Fragment"
         android:name="com.example.test.Afragment"
@@ -11,7 +24,8 @@
         >
         <action
             android:id="@+id/action_page2"
-            app:destination="@id/page2Fragment" />
+            app:destination="@id/page2Fragment"
+            />
     </fragment>
 
     <fragment
@@ -21,7 +35,8 @@
         >
         <action
             android:id="@+id/action_page3"
-            app:destination="@id/page3Fragment" />
+            app:destination="@id/page3Fragment"
+            />
     </fragment>
 
     <fragment
@@ -29,9 +44,11 @@
         android:name="com.example.test.Cfragment"
         android:label="fragment_page3"
         >
+
         <action
             android:id="@+id/action_page4"
-            app:destination="@id/page4Fragment" />
+            app:destination="@id/page4Fragment"
+            />
     </fragment>
 
     <fragment
@@ -39,8 +56,5 @@
         android:name="com.example.test.Dfragment"
         android:label="fragment_page4"
         >
-        <action
-            android:id="@+id/action_page1"
-            app:popUpTo="@id/page1Fragment" />
     </fragment>
 </navigation>

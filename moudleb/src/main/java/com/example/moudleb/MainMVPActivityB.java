@@ -8,6 +8,11 @@ import androidx.lifecycle.ViewModel;
 public class MainMVPActivityB extends BaseMVPActivity {
 
     @Override
+    protected boolean setStatusBar() {
+        return true;
+    }
+
+    @Override
     protected boolean isFitsSystemWindows() {
         return false;
     }

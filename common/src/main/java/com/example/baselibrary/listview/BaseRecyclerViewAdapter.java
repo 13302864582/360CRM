@@ -11,8 +11,8 @@ import java.util.List;
 import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BaseRecyclerViewAdapter<T,E extends BaseViewHolder> extends RecyclerView.Adapter<E>{
-    private Context context;
-    private LayoutInflater inflater;
+    protected Context context;
+    protected LayoutInflater inflater;
 
     public List<T> getDatas() {
         return datas;
@@ -22,7 +22,7 @@ public abstract class BaseRecyclerViewAdapter<T,E extends BaseViewHolder> extend
         this.datas = datas;
     }
 
-    private List<T> datas;
+    protected List<T> datas;
     protected OnItemClickListner onItemClickListner;//单击事件
     protected OnItemLongClickListner onItemLongClickListner;//长按单击事件
     private boolean clickFlag = true;//单击事件和长单击事件的屏蔽标识
