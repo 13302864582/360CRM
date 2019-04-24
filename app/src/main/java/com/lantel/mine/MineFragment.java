@@ -1,35 +1,30 @@
 package com.lantel.mine;
 
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.util.Log;
-
-import com.example.baselibrary.base.BaseMVPFragment;
+import com.xiao360.baselibrary.base.BaseMVPFragment;
+import com.xiao360.baselibrary.base.BaseModel;
 import com.example.moudletest.R;
 import com.example.moudletest.R2;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.lantel.mine.list.MenuItem;
-import com.lantel.mine.list.MineRecycleViewAdapter;
+import com.lantel.mine.list.adpter.MineRecycleViewAdapter;
 import com.lantel.mine.mvp.MineContract;
 import com.lantel.mine.mvp.MineModel;
 import com.lantel.mine.mvp.MinePresenter;
+import com.xiao360.baselibrary.util.LogUtils;
+
 import java.util.ArrayList;
-import java.util.List;
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 
-public class MineFragment extends BaseMVPFragment<MinePresenter, MineModel> implements MineContract.View {
+public class MineFragment extends BaseMVPFragment<MinePresenter, MineModel> implements MineContract.View,MineRecycleViewAdapter.OnMenuClickListener {
     @BindView(R2.id.mine_Recycleview)
     RecyclerView mineRecycleview;
 
-    /*@BindView(R2.id.mine_RefreshLayout)
-    SmartRefreshLayout mineRefreshLayout;*/
-    @BindView(R2.id.bottom_navigation)
-    BottomNavigationView mineRefreshLayout;
-
     private MineRecycleViewAdapter adapter;
+
+    @Override
+    protected int getBackgroundColor() {
+        return android.R.color.white;
+    }
 
     @Override
     protected MineModel getModel() {
@@ -48,42 +43,38 @@ public class MineFragment extends BaseMVPFragment<MinePresenter, MineModel> impl
 
     @Override
     protected void initView() {
-        mineRefreshLayout.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull android.view.MenuItem menuItem) {
-                Log.d("MineFragmenttab","onTabSelect====="+menuItem.getTitle());
-                return true;
-            }
-        });
-       /* mineRefreshLayout.getMenu().findItem(R.id.item_bottom_4).setVisible(false);
-        mineRefreshLayout.getMenu().findItem(R.id.item_bottom_3).setVisible(false);*/
-
-        Resources resource = getResources();
-        String[] titles = resource.getStringArray(R.array.mine_menu_title);
-        TypedArray icons = resource.obtainTypedArray(R.array.mine_menu_icon);
-
-        List<MenuItem> list = new ArrayList<>();
-        for (int i = 0; i < titles.length; i++) {
-            MenuItem menuItem = new MenuItem();
-            menuItem.setText(titles[i]);
-            menuItem.setIcon(icons.getResourceId(i, 0));
-            list.add(menuItem);
-        }
-
-        adapter = new MineRecycleViewAdapter(MineFragment.this.getContext(), list);
         mineRecycleview.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new MineRecycleViewAdapter(getContext(), null);
+        adapter.setOnMenuClickListener(this);
         mineRecycleview.setAdapter(adapter);
     }
 
     @Override
-    public void setData(List list) {
-        /*adapter = new MineRecycleViewAdapter(this.getContext(),list);
-        mineRecycleview.setAdapter(adapter);*/
-        adapter.loadData(list);
+    public void notifyData(ArrayList<BaseModel> list) {
+        adapter.refreshData(list);
     }
 
+    /**
+     * 菜单点击跳转**
+     */
     @Override
-    public void notifyData(ArrayList<MenuItem> list) {
-        adapter.refreshData(list);
+    public void onMenuClick(int action) {
+        switch (action){
+            case MineRecycleViewAdapter.ACTION_FILE:
+                LogUtils.d("ACTION_FILE");
+                break;
+            case MineRecycleViewAdapter.ACTION_CHANNEL:
+                LogUtils.d("ACTION_CHANNEL");
+                break;
+            case MineRecycleViewAdapter.ACTION_OUTPUT:
+                LogUtils.d("ACTION_OUTPUT");
+                break;
+            case MineRecycleViewAdapter.ACTION_ROLE_PERMISSION:
+                LogUtils.d("ACTION_ROLE_PERMISSION");
+                break;
+            case MineRecycleViewAdapter.ACTION_FEEDBACK:
+                LogUtils.d("ACTION_FEEDBACK");
+                break;
+        }
     }
 }

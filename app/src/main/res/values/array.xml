@@ -2,38 +2,38 @@
 <resources>
     <!--模块：我的   菜单标题-->
     <string-array name="mine_menu_title">
-        <item>@string/mine_role_permission</item>
         <item>@string/mine_my_file</item>
         <item>@string/mine_my_channel</item>
         <item>@string/mine_my_output</item>
+        <item>@string/mine_role_permission</item>
         <item>@string/mine_help_doc</item>
     </string-array>
 
     <!--模块：我的   菜单图标-->
     <integer-array name="mine_menu_icon">
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/my_file</item>
+        <item>@mipmap/my_channel</item>
+        <item>@mipmap/my_output</item>
+        <item>@mipmap/my_rolepermission</item>
+        <item>@mipmap/my_feedback</item>
     </integer-array>
 
 
-    <!--模块：APP应用底部tab   tab图标-->
+   <!-- 模块：APP应用底部tab   tab图标
     <integer-array name="app_tab_icon">
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
+        <item>@mipmap/ic_block_add</item>
+        <item>@mipmap/ic_block_delete</item>
+        <item>@mipmap/ic_block_selected</item>
+        <item>@mipmap/ic_block_add</item>
+        <item>@mipmap/ic_block_delete</item>
     </integer-array>
 
-    <!--模块：APP应用底部tab   tab标题-->
+    模块：APP应用底部tab   tab标题
     <string-array name="app_tab_title">
         <item>@mipmap/ic_launcher</item>
         <item>@mipmap/ic_launcher</item>
         <item>@mipmap/ic_launcher</item>
         <item>@mipmap/ic_launcher</item>
         <item>@mipmap/ic_launcher</item>
-    </string-array>
+    </string-array>-->
 </resources>

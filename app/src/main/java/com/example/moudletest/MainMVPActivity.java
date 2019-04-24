@@ -1,7 +1,7 @@
 package com.example.moudletest;
 
-import com.example.baselibrary.base.BaseActivity;
-import com.example.baselibrary.circleMenu.GooeyMenu;
+import com.xiao360.baselibrary.base.BaseActivity;
+import com.xiao360.baselibrary.circleMenu.GooeyMenu;
 import butterknife.BindView;
 
 public class MainMVPActivity extends BaseActivity implements GooeyMenu.GooeyMenuInterface {

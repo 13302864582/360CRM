@@ -1,30 +1,29 @@
 package com.lantel.app;
 
-import android.os.Bundle;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.cangwang.core.IBaseClient;
 import com.cangwang.core.ModuleEvent;
-import com.example.baselibrary.base.BaseMVPActivity;
-import com.example.baselibrary.util.SpCache;
+import com.xiao360.baselibrary.base.BaseMVPActivity;
 import com.example.moudletest.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.lantel.app.mvp.AppContract;
 import com.lantel.app.mvp.AppModel;
 import com.lantel.app.mvp.AppPresenter;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
-import androidx.navigation.NavOptions;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.ItemTouchHelper;
+import butterknife.BindView;
+
 
 public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> implements AppContract.View {
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView bottomNavigation;
+
     private NavController mNavController;
+    private NavHostFragment navHost;
 
     @Override
     protected boolean setStatusBar() {
@@ -54,22 +53,45 @@ public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> impl
 
     @Override
     public void initView() {
+
         setFullScreen(true);
         getWindow().getDecorView().setSystemUiVisibility(View.INVISIBLE);
 
-        NavHostFragment finalHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.my_nav_host_fragment);
-        mNavController=finalHost.getNavController();
-        Bundle bundle = new Bundle();
-        bundle.putString("tag","this is fz");
-        mNavController.navigate(R.id.action_page1,bundle);
+
+        bottomNavigation.setItemIconTintList(null);
+        bottomNavigation.setOnNavigationItemSelectedListener(mPresenter);
+
+        navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.my_nav_host_fragment);
+        mNavController = navHost.getNavController();
+        navigate(R.id.action_mine);
+
+
+        this.getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+        setFullScreen(false);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
     }
 
     @ModuleEvent(coreClientClass = IBaseClient.class)
     public void funfz(boolean FullScreen) {
-        Log.d("SplashFragment","setFullScreen====");
-       //setFullScreen(FullScreen);
+        Log.d("SplashFragment", "setFullScreen====");
+        //setFullScreen(FullScreen);
         setFullScreen(false);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
+
+    @Override
+    public void navigate(int action_id) {
+        mNavController.navigate(action_id);
+    }
+
+ /*   @OnClick(R.id.button)
+    public void onViewClicked(View view) {
+        int visable = bottomNavigation.getVisibility();
+        if(View.GONE == visable){
+            bottomNavigation.setVisibility(View.VISIBLE);
+        }else {
+            bottomNavigation.setVisibility(View.GONE);
+        }
+    }*/
 }

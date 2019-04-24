@@ -1,6 +1,6 @@
 package com.example.moudleb;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.baselibrary.base.BaseMVPActivity;
+import com.xiao360.baselibrary.base.BaseMVPActivity;
 
 import androidx.lifecycle.ViewModel;
 

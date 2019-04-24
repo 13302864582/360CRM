@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--===========================================模块：我的===================================================-->
+    <!--列表中的item布局，左边图标属性-->
+    <dimen name="mine_itemIcon_left_width">24dp</dimen>
+    <dimen name="mine_itemIcon_left_height">20dp</dimen>
+    <dimen name="mine_itemIcon_left_marginStart">29dp</dimen>
+
+    <!--列表中的item布局，中间文字属性-->
+    <dimen name="mine_itemText_size">15sp</dimen>
+    <dimen name="mine_itemText_marginStart">13dp</dimen>
+
+    <!--列表中的item布局，右边边图标属性-->
+    <dimen name="mine_item_right_marginEnd">31dp</dimen>
+    <dimen name="mine_itemIcon_right_width">7dp</dimen>
+    <dimen name="mine_itemIcon_right_height">12dp</dimen>
+
+    <!--列表item高度属性-->
+    <dimen name="mine_item_height">60dp</dimen>
+
+
+</resources>

@@ -2,37 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
         <item
-            android:id="@+id/item_bottom_1"
+            android:id="@+id/item_home"
             android:enabled="true"
-            android:icon="@android:drawable/ic_menu_camera"
-            android:title="选项一"
-            app:showAsAction="ifRoom" />
+            android:icon="@drawable/home_selector"
+            android:title="@string/tabhost_home"
+            app:showAsAction="always" />
         <item
-            android:id="@+id/item_bottom_2"
+            android:id="@+id/item_classes"
             android:enabled="true"
             android:checkable="true"
-            android:icon="@android:drawable/ic_menu_compass"
-            android:title="选项二"
-            app:showAsAction="ifRoom" />
+            android:icon="@drawable/classes_selector"
+            android:title="@string/tabhost_classes"
+            app:showAsAction="always" />
 
         <item
-            android:id="@+id/item_bottom_3"
+            android:id="@+id/item_student"
             android:enabled="true"
-            android:icon="@android:drawable/ic_menu_search"
-            android:title="选项三"
-            app:showAsAction="ifRoom" />
+            android:icon="@drawable/student_selector"
+            android:title="@string/tabhost_student"
+            app:showAsAction="always" />
 
         <item
-            android:id="@+id/item_bottom_4"
+            android:id="@+id/item_mine"
             android:enabled="true"
-            android:icon="@android:drawable/ic_menu_help"
-            android:title="选项四"
-            app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/item_bottom_5"
-        android:enabled="true"
-        android:icon="@android:drawable/ic_menu_help"
-        android:title="选项五"
-        app:showAsAction="ifRoom" />
+            android:icon="@drawable/mine_selector"
+            android:title="@string/tabhost_mine"
+            app:showAsAction="always" />
 </menu>

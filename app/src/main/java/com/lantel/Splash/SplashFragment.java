@@ -5,15 +5,12 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.cangwang.core.IBaseClient;
-import com.cangwang.core.ModuleBus;
-import com.example.baselibrary.base.BaseFragment;
-import com.example.baselibrary.util.LogUtils;
+import com.xiao360.baselibrary.base.BaseFragment;
+import com.xiao360.baselibrary.util.LogUtils;
 import com.example.moudletest.R;
 
 import androidx.navigation.Navigation;
 import butterknife.OnClick;
-import retrofit2.http.Path;
 
 @Route(path = "/test/fragment")
 public class SplashFragment extends BaseFragment {
@@ -81,6 +78,6 @@ public class SplashFragment extends BaseFragment {
     @OnClick(R.id.textb)
     public void onViewClicked() {
         Log.d("tabhost","b=======");
-        Navigation.findNavController(rootView).navigate(R.id.action_page3);
+        Navigation.findNavController(rootView).navigate(R.id.action_home);
     }
 }

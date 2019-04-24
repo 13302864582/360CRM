@@ -1,7 +1,7 @@
 package com.example.mvp;
 
-import com.example.baselibrary.base.BaseActivityPresenter;
-import com.example.baselibrary.mvp.BaseView;
+import com.xiao360.baselibrary.base.BaseActivityPresenter;
+import com.xiao360.baselibrary.mvp.BaseView;
 
 public interface MainContract {
     interface View extends BaseView {

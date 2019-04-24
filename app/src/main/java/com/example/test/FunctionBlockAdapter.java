@@ -7,8 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.baselibrary.dragMenu.ItemTouchHelperAdapter;
-import com.example.baselibrary.listview.BaseRecyclerViewAdapter;
+import com.xiao360.baselibrary.dragMenu.ItemTouchHelperAdapter;
+import com.xiao360.baselibrary.listview.BaseRecyclerViewAdapter;
+import com.xiao360.baselibrary.listview.BaseViewHolder;
 import com.example.moudletest.R;
 
 import java.util.Collections;
@@ -16,7 +17,7 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class FunctionBlockAdapter extends BaseRecyclerViewAdapter<FunctionItem,FunctionItemHolder> implements ItemTouchHelperAdapter{
+public class FunctionBlockAdapter extends BaseRecyclerViewAdapter<FunctionItem> implements ItemTouchHelperAdapter{
 
     public FunctionBlockAdapter(Context context, List<FunctionItem> datas) {
         super(context, datas);
@@ -55,12 +56,13 @@ public class FunctionBlockAdapter extends BaseRecyclerViewAdapter<FunctionItem,F
     }
 
     @Override
-    protected void bindViewHolder(FunctionItemHolder holder, FunctionItem data, int position, int viewType) {
+    protected void bindViewHolder(BaseViewHolder holder, FunctionItem data, int position, int viewType) {
+        FunctionItemHolder functionItemHolder = (FunctionItemHolder) holder;
         int rid = context.getResources().getIdentifier(data.imageUrl,"drawable",context.getPackageName());
-        setImage(rid, holder.iv);
-        holder.text.setText(data.name);
-        holder.btn.setImageResource(R.mipmap.ic_block_delete);
-        holder.btn.setOnClickListener(new View.OnClickListener() {
+        setImage(rid, functionItemHolder.iv);
+        functionItemHolder.text.setText(data.name);
+        functionItemHolder.btn.setImageResource(R.mipmap.ic_audio);
+        functionItemHolder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FunctionItem fi = datas.remove(position);
@@ -71,6 +73,8 @@ public class FunctionBlockAdapter extends BaseRecyclerViewAdapter<FunctionItem,F
             }
         });
     }
+
+
 
     public void setImage(int url, ImageView iv) {
         Glide.with(context).load(url).into(iv);

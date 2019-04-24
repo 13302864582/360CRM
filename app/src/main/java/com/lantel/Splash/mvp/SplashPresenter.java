@@ -2,10 +2,7 @@ package com.lantel.Splash.mvp;
 
 import android.os.Bundle;
 
-import com.example.baselibrary.util.LogUtils;
-import com.lantel.mine.list.MenuItem;
-
-import java.util.ArrayList;
+import com.xiao360.baselibrary.util.LogUtils;
 
 public class SplashPresenter extends SplashContract.Presenter{
     @Override
@@ -29,16 +26,6 @@ public class SplashPresenter extends SplashContract.Presenter{
             list.add(menuItem);
         }
         mView.notifyData(list);*/
-    }
-
-    public void loadData(int size) {
-        ArrayList<MenuItem> list = new ArrayList();
-        for(int i=0;i<size;i++){
-            MenuItem menuItem = new MenuItem();
-            menuItem.setText("这是第"+i+"条数据");
-            list.add(menuItem);
-        }
-        mView.setData(list);
     }
 
     @Override

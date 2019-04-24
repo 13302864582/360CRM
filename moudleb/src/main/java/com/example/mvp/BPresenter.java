@@ -3,7 +3,7 @@ package com.example.mvp;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.baselibrary.base.BaseRxObserver;
+import com.xiao360.baselibrary.base.BaseRxObserver;
 import com.example.moudleb.TestBean;
 import com.httpsdk.http.RxHelper;
 

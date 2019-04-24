@@ -8,5 +8,9 @@
     <string name="mine_my_output">我的产出</string>
     <string name="mine_help_doc">帮助说明</string>
 
-
+    <!--模块：底部导航菜单   菜单title-->
+    <string name="tabhost_home">首页</string>
+    <string name="tabhost_classes">班级</string>
+    <string name="tabhost_mine">我的</string>
+    <string name="tabhost_student">学员</string>
 </resources>

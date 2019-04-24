@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.baselibrary.base.BaseMVPFragment;
-import com.example.baselibrary.lifecycle.LifeCycleFragmentFactory;
+import com.xiao360.baselibrary.base.BaseMVPFragment;
+import com.xiao360.baselibrary.lifecycle.LifeCycleFragmentFactory;
 import com.example.moudleb.R;
 import com.example.mvp.BContract;
 import com.example.mvp.BModel;
@@ -17,6 +17,11 @@ import androidx.annotation.Nullable;
 public class mine_fragment extends BaseMVPFragment<BPresenter, BModel> implements BContract.View {
     private static final String TAG = "home_fragment";
     private TextView txt;
+
+    @Override
+    protected int getBackgroundColor() {
+        return R.color.default_color;
+    }
 
     @Override
     protected BModel getModel() {

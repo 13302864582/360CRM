@@ -1,7 +1,7 @@
 package com.example.mvp;
 
-import com.example.baselibrary.base.BaseFragmentPresenter;
-import com.example.baselibrary.mvp.BaseView;
+import com.xiao360.baselibrary.base.BaseFragmentPresenter;
+import com.xiao360.baselibrary.mvp.BaseView;
 
 public interface BContract {
     interface View extends BaseView {

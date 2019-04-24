@@ -1,17 +1,14 @@
 package com.lantel.mine.mvp;
 
-import com.example.baselibrary.base.BaseFragmentPresenter;
-import com.example.baselibrary.mvp.BaseView;
-import com.lantel.mine.list.MenuItem;
+import com.xiao360.baselibrary.base.BaseFragmentPresenter;
+import com.xiao360.baselibrary.base.BaseModel;
+import com.xiao360.baselibrary.mvp.BaseView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public interface MineContract {
     interface View extends BaseView {
-        void setData(List list);
-
-        void notifyData(ArrayList<MenuItem> list);
+        void notifyData(ArrayList<BaseModel> list);
     }
 
     abstract class Presenter extends BaseFragmentPresenter<View, MineModel> {

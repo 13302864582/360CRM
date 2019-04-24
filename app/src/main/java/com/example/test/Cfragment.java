@@ -2,7 +2,7 @@ package com.example.test;
 
 import android.util.Log;
 
-import com.example.baselibrary.base.BaseFragment;
+import com.xiao360.baselibrary.base.BaseFragment;
 import com.example.moudletest.R;
 
 import androidx.navigation.Navigation;
@@ -22,6 +22,6 @@ public class Cfragment extends BaseFragment {
     @OnClick(R.id.textc)
     public void onViewClicked() {
         Log.d("tabhost","c=======");
-        Navigation.findNavController(rootView).navigate(R.id.action_page4);
+        Navigation.findNavController(rootView).navigate(R.id.action_home);
     }
 }

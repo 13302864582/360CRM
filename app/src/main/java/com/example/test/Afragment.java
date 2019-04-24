@@ -1,10 +1,10 @@
 package com.example.test;
 
 import android.content.Context;
-import com.example.baselibrary.base.BaseFragment;
-import com.example.baselibrary.dragMenu.DefaultItemCallback;
-import com.example.baselibrary.dragMenu.DefaultItemTouchHelper;
-import com.example.baselibrary.dragMenu.SpaceItemDecoration;
+import com.xiao360.baselibrary.base.BaseFragment;
+import com.xiao360.baselibrary.dragMenu.DefaultItemCallback;
+import com.xiao360.baselibrary.dragMenu.DefaultItemTouchHelper;
+import com.xiao360.baselibrary.dragMenu.SpaceItemDecoration;
 import com.example.moudletest.R;
 import java.util.ArrayList;
 import androidx.recyclerview.widget.GridLayoutManager;

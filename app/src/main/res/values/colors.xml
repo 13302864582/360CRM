@@ -5,4 +5,9 @@
     <color name="line_color">#CCCCCC</color>
     <color name="titlecolor">#1296db</color>
 
+    <!--底部导航未选中颜色-->
+    <color name="font_hint">#979AA0</color>
+
+    <!--底部导航选中颜色-->
+    <color name="font_select">#4898FF</color>
 </resources>

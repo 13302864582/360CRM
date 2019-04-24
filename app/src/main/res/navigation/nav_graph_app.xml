@@ -4,57 +4,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:startDestination="@id/splashFragment"
     >
+    <!--启动页-->
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.lantel.Splash.SplashFragment"
         android:label="fragment_page_splash"
         >
-        <action
-            android:id="@+id/action_page1"
-            app:destination="@id/page1Fragment"
-            app:clearTask="true"
-            />
-
     </fragment>
 
+    <!--首页-->
     <fragment
-        android:id="@+id/page1Fragment"
+        android:id="@+id/HomeFragment"
         android:name="com.example.test.Afragment"
-        android:label="fragment_page1"
+        android:label="HomeFragment"
         >
-        <action
-            android:id="@+id/action_page2"
-            app:destination="@id/page2Fragment"
-            />
     </fragment>
 
+    <!--班级页-->
     <fragment
-        android:id="@+id/page2Fragment"
+        android:id="@+id/ClassesFragment"
         android:name="com.example.test.Bfragment"
-        android:label="fragment_page2"
+        android:label="ClassesFragment"
         >
-        <action
-            android:id="@+id/action_page3"
-            app:destination="@id/page3Fragment"
-            />
     </fragment>
 
+    <!--学员页-->
     <fragment
-        android:id="@+id/page3Fragment"
+        android:id="@+id/StudentFragment"
         android:name="com.example.test.Cfragment"
-        android:label="fragment_page3"
+        android:label="StudentFragment"
         >
-
-        <action
-            android:id="@+id/action_page4"
-            app:destination="@id/page4Fragment"
-            />
     </fragment>
 
+    <!--我的页-->
     <fragment
-        android:id="@+id/page4Fragment"
-        android:name="com.example.test.Dfragment"
-        android:label="fragment_page4"
+        android:id="@+id/Mine_Fragment"
+        android:name="com.lantel.mine.MineFragment"
+        android:label="MineFragment"
         >
     </fragment>
+
+    <!--跳转到学员-->
+    <action
+        android:id="@+id/action_student"
+        app:destination="@id/StudentFragment"
+        />
+
+    <!--跳转到首页-->
+    <action
+        android:id="@+id/action_home"
+        app:destination="@id/HomeFragment"
+        />
+
+    <!--跳转到我的-->
+    <action
+        android:id="@+id/action_mine"
+        app:destination="@id/Mine_Fragment"
+        app:clearTask="true"
+        />
+
+    <!--跳转到班级-->
+    <action
+        android:id="@+id/action_classes"
+        app:destination="@id/ClassesFragment"
+        />
 </navigation>
