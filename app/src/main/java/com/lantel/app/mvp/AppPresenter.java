@@ -11,7 +11,7 @@ public class AppPresenter extends AppContract.Presenter implements BottomNavigat
 
     @Override
     public void onCrete() {
-        Log.d(TAG1, "onCrete: ");
+       // Log.d(TAG1, "onCrete: ");
     }
 
     @Override
@@ -19,22 +19,22 @@ public class AppPresenter extends AppContract.Presenter implements BottomNavigat
 
     @Override
     public void onResume() {
-        Log.d(TAG1, "onResume: ");
+       // Log.d(TAG1, "onResume: ");
     }
 
     @Override
     public void onPause() {
-        Log.d(TAG1, "onPause: ");
+       // Log.d(TAG1, "onPause: ");
     }
 
     @Override
     public void onStop() {
-        Log.d(TAG1, "onStop: ");
+        //Log.d(TAG1, "onStop: ");
     }
 
     @Override
     public void onDestroy() {
-        Log.d(TAG1, "onDestroy: ");
+        //Log.d(TAG1, "onDestroy: ");
     }
 
     @Override

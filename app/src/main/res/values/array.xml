@@ -18,22 +18,62 @@
         <item>@mipmap/my_feedback</item>
     </integer-array>
 
-
-   <!-- 模块：APP应用底部tab   tab图标
-    <integer-array name="app_tab_icon">
-        <item>@mipmap/ic_block_add</item>
-        <item>@mipmap/ic_block_delete</item>
-        <item>@mipmap/ic_block_selected</item>
-        <item>@mipmap/ic_block_add</item>
-        <item>@mipmap/ic_block_delete</item>
+    <!--模块：我的   item跳转action标志-->
+    <integer-array name="mine_menu_action">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </integer-array>
 
-    模块：APP应用底部tab   tab标题
-    <string-array name="app_tab_title">
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-        <item>@mipmap/ic_launcher</item>
-    </string-array>-->
+
+    <!--模块：主页   菜单标题-->
+    <string-array name="home_menu_title">
+        <item>@string/home_market_list</item>
+        <item>@string/home_merchandiser</item>
+        <item>@string/home_registration_fee</item>
+        <item>@string/home_curriculum</item>
+        <item>@string/home_attence</item>
+        <item>@string/home_prepare_lesson</item>
+        <item>@string/home_class_review</item>
+        <item>@string/home_homework</item>
+        <item>@string/home_work</item>
+        <item>@string/home_report_forms</item>
+        <item>@string/home_deal_with</item>
+        <item>@string/home_setting</item>item>
+    </string-array>
+
+    <!--模块：主页   菜单图标-->
+    <integer-array name="home_menu_icon">
+        <item>@mipmap/market_list</item>
+        <item>@mipmap/merchandiser</item>
+        <item>@mipmap/registration_fee</item>
+        <item>@mipmap/curriculum</item>
+        <item>@mipmap/attence</item>
+        <item>@mipmap/prepare_lesson</item>
+        <item>@mipmap/class_review</item>
+        <item>@mipmap/homework</item>
+        <item>@mipmap/work</item>
+        <item>@mipmap/report_forms</item>
+        <item>@mipmap/deal_with</item>
+        <item>@mipmap/setting</item>
+    </integer-array>
+
+
+    <integer-array name="home_menu_action">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+    </integer-array>
+
 </resources>

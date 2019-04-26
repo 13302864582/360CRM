@@ -19,8 +19,8 @@ public class home_fragment extends BaseMVPFragment<BPresenter, BModel> implement
     private TextView txt;
 
     @Override
-    protected int getBackgroundColor() {
-        return android.R.color.white;
+    protected int getStateBarviewID() {
+        return -1;
     }
 
     @Override

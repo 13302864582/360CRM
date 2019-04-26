@@ -18,9 +18,10 @@ public class mine_fragment extends BaseMVPFragment<BPresenter, BModel> implement
     private static final String TAG = "home_fragment";
     private TextView txt;
 
+
     @Override
-    protected int getBackgroundColor() {
-        return R.color.default_color;
+    protected int getStateBarviewID() {
+        return -1;
     }
 
     @Override
@@ -46,7 +47,7 @@ public class mine_fragment extends BaseMVPFragment<BPresenter, BModel> implement
 
     @Override
     public void show(String msg) {
-        Log.d(TAG, "====="+msg);
+
     }
 
     @Override

@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.lantel.mine.list.adpter.MineRecycleViewAdapter;
+import com.lantel.mine.list.model.HeaderBean;
 import com.lantel.mine.list.model.MenuItemModel;
 import com.xiao360.baselibrary.base.BaseModel;
 import com.xiao360.baselibrary.util.LogUtils;
 import com.example.moudletest.R;
 import java.util.ArrayList;
+
+import static com.lantel.AppConfig.TYPE_ITEM;
 
 public class MinePresenter extends MineContract.Presenter {
     @Override
@@ -35,23 +38,26 @@ public class MinePresenter extends MineContract.Presenter {
 
         ArrayList<BaseModel> list = new ArrayList<>();
 
+        //模拟数据
+        ArrayList<String> positions = new ArrayList<>();
+        for(int i=1;i<13;i++){
+            positions.add("师"+i);
+            positions.add("任课老师"+i);
+            positions.add("任师"+i);
+        }
+
         //添加头部数据
-        BaseModel headModel = new BaseModel(MineRecycleViewAdapter.TYPE_HEAD,"头部局");
+        BaseModel headModel = new HeaderBean("李晓晓", "龙华区阳光小学", "http://img5.duitang.com/uploads/item/201506/07/20150607110911_kY5cP.jpeg", positions);
         list.add(headModel);
 
         //添加菜单数据
         String[] titles = resource.getStringArray(R.array.mine_menu_title);
+        int[] actions = resource.getIntArray(R.array.mine_menu_action);
         TypedArray icons = resource.obtainTypedArray(R.array.mine_menu_icon);
         for (int i = 0; i < titles.length; i++) {
-            MenuItemModel TextImgIntModel = new MenuItemModel(icons.getResourceId(i, 0),i,titles[i],MineRecycleViewAdapter.TYPE_ITEM);
+            MenuItemModel TextImgIntModel = new MenuItemModel(icons.getResourceId(i, 0),actions[i],titles[i],TYPE_ITEM);
             list.add(TextImgIntModel);
         }
-
-        for (int i = 0; i < 30; i++) {
-            MenuItemModel TextImgIntModel = new MenuItemModel(icons.getResourceId(0, 0),i,titles[0],MineRecycleViewAdapter.TYPE_ITEM);
-            list.add(TextImgIntModel);
-        }
-
         mView.notifyData(list);
     }
 

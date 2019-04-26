@@ -49,6 +49,10 @@ dependencies {
     }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
+
+    implementation 'com.youth.banner:banner:1.4.10'  //轮播图
+    /*添加依赖*/
+    implementation 'com.github.yuzhiqiang1993:zxing:2.2.5' //二维码
 }
 
 

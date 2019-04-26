@@ -5,8 +5,8 @@ import com.xiao360.baselibrary.circleMenu.GooeyMenu;
 import butterknife.BindView;
 
 public class MainMVPActivity extends BaseActivity implements GooeyMenu.GooeyMenuInterface {
-    @BindView(R2.id.gooey_menu)
-    GooeyMenu gooeyMenu;
+    /*@BindView(R2.id.gooey_menu)
+    GooeyMenu gooeyMenu;*/
 
     @Override
     protected boolean isFitsSystemWindows() {
@@ -20,7 +20,7 @@ public class MainMVPActivity extends BaseActivity implements GooeyMenu.GooeyMenu
 
     @Override
     public void initView() {
-        gooeyMenu.setOnMenuListener(this);
+        //gooeyMenu.setOnMenuListener(this);
     }
 
     @Override

@@ -41,39 +41,38 @@ public class MainPresenter extends MainContract.Presenter implements BottomNavig
 
     @Override
     public void onCrete() {
-        Log.d(TAG1, "onCrete: ");
+
     }
 
     @Override
     public void onStart() {
-        Log.d(TAG1, "onStart: ");
+
         load();
     }
 
     @Override
     public void onResume() {
-        Log.d(TAG1, "onResume: ");
+
     }
 
     @Override
     public void onPause() {
-        Log.d(TAG1, "onPause: ");
+
     }
 
     @Override
     public void onStop() {
-        Log.d(TAG1, "onStop: ");
+
     }
 
     @Override
     public void onDestroy() {
-        Log.d(TAG1, "onDestroy: ");
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         menuItem.setChecked(true);
-        Log.d(TAG1, "onNavigationItemSelected=====:"+menuItem.getTitle());
         return false;
     }
 }

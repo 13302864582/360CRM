@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/mine_item_height"
     android:background="?attr/selectableItemBackground"
+    app:layout_srlBackgroundColor="@color/white"
     >
     <ImageView
         android:id="@+id/icon"
@@ -35,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@mipmap/icon_arrow"
+        android:src="@mipmap/my_icon_arrow_item"
          />
 
 

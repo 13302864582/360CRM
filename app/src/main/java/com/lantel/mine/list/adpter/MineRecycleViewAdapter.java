@@ -1,13 +1,18 @@
 package com.lantel.mine.list.adpter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.lantel.AppConfig;
+import com.lantel.common.image.GlideCircleWithBorder;
+import com.lantel.common.list.GridItemDecoration;
+import com.lantel.mine.list.model.HeaderBean;
 import com.lantel.mine.list.model.MenuItemModel;
 import com.xiao360.baselibrary.base.BaseModel;
 import com.xiao360.baselibrary.listview.BaseRecyclerViewAdapter;
@@ -16,6 +21,10 @@ import com.example.moudletest.R;
 import com.lantel.mine.list.holder.MineHeadViewHolder;
 import com.lantel.mine.list.holder.MineViewHolder;
 import java.util.List;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 /**
  * Created by 冯支
@@ -24,20 +33,7 @@ import java.util.List;
  * Time: 18:18
  */
 public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
-    /**
-     * 布局viewType标志，TYPE_HEAD头布局，TYPE_ITEM选项布局
-     */
-    public static final int TYPE_HEAD = 0x10;
-    public static final int TYPE_ITEM = 0x11;
 
-    /**
-     * 跳转ACTION标志
-     */
-    public static final int ACTION_FILE = 0x00;
-    public static final int ACTION_CHANNEL = 0x01;
-    public static final int ACTION_OUTPUT = 0x02;
-    public static final int ACTION_ROLE_PERMISSION = 0x03;
-    public static final int ACTION_FEEDBACK = 0x04;
 
     /**
      * 点击事件
@@ -68,11 +64,12 @@ public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
      */
     @Override
     protected BaseViewHolder CreateViewHolder(LayoutInflater inflater, ViewGroup parent, int viewType) {
-        if(viewType == TYPE_HEAD){
-            return new MineHeadViewHolder(inflater.inflate(R.layout.top_personal_mess,parent,false));
-        }else{
+        if(viewType == AppConfig.TYPE_HEAD){
+            return new MineHeadViewHolder(inflater.inflate(R.layout.mine_top_personal_mess,parent,false));
+        }else if(viewType == AppConfig.TYPE_ITEM){
             return new MineViewHolder(inflater.inflate(R.layout.mine_item,parent,false));
         }
+        return null;
     }
 
 
@@ -81,7 +78,10 @@ public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
      */
     @Override
     protected void bindViewHolder(BaseViewHolder viewHolder, BaseModel data, int position, int viewType) {
-        if(viewType == TYPE_HEAD){
+        if(viewHolder == null)
+            return;
+
+        if(viewType == AppConfig.TYPE_HEAD){
             bindTopHolder(viewHolder,data,position);
         }else {
             bindItemHolder(viewHolder,data,position);
@@ -113,12 +113,51 @@ public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
      */
     private void bindTopHolder(BaseViewHolder viewHolder, BaseModel data, int position) {
         MineHeadViewHolder headViewHolder = (MineHeadViewHolder) viewHolder;
-        ImageView imageView = headViewHolder.getView(R.id.top_img);
+        HeaderBean headerBean = (HeaderBean) data;
 
-        Glide.with(context)
-                .load("http://img5.duitang.com/uploads/item/201506/07/20150607110911_kY5cP.jpeg")
-                .apply(RequestOptions.bitmapTransform(new CircleCrop()))
-                .into(imageView);
+        headViewHolder.top_personal_name.setText(headerBean.getPersonal_name());
+
+        headViewHolder.top_personal_area.setText(headerBean.getPersonal_area());
+
+        Glide.with(context).load(headerBean.getPersonal_img())
+                        .apply(new RequestOptions()
+                        .error(context.getResources().getDrawable(R.mipmap.ic_launcher))
+                        .placeholder(R.mipmap.ic_launcher)
+                        .centerCrop()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .transform(new GlideCircleWithBorder(3, Color.parseColor("#ccffffff"))))
+                        .into(headViewHolder.top_circle_personal);
+
+        MineHeadPositionAdapter adapter =new MineHeadPositionAdapter(context,headerBean.getPositions());
+        RecyclerView grid_position = headViewHolder.top_grid_position;
+        GridItemDecoration divider = new GridItemDecoration.Builder(context)
+                .setVerticalSpan(R.dimen.common_vew_raw_padding)
+                .setHorizontalSpan(R.dimen.common_vew_vertical_padding)
+                .setColorResource(R.color.mine_text_position)
+                .setShowLastLine(true)
+                .setNormalGrid(false)
+                .build();
+
+        grid_position.addItemDecoration(divider);
+        grid_position.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                grid_position.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
+        grid_position.setLayoutManager(new GridLayoutManager(context,4));
+        grid_position.setAdapter(adapter);
     }
 
 

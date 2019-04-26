@@ -1,6 +1,7 @@
 package com.xiao360.baselibrary.base;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,13 +40,14 @@ public abstract class BaseMVPFragment<T extends BaseFragmentPresenter, E extends
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (rootView == null)
             rootView = inflater.inflate(getLayoutResource(), container, false);
-        rootView.setBackgroundColor(getBackgroundColor());
         ButterKnife.bind(this, rootView);
+        if(getStateBarviewID()!=-1)
+        rootView.findViewById(getStateBarviewID()).setVisibility(Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT?View.GONE:View.VISIBLE);
         initView();
         return rootView;
     }
 
-    protected abstract int getBackgroundColor();
+    protected abstract int getStateBarviewID();
 
     @Override
     public void onDestroyView() {

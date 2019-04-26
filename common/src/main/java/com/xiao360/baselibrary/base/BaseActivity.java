@@ -10,7 +10,6 @@ import android.view.Window;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.cangwang.core.ModuleBus;
 import com.xiao360.baselibrary.util.AppManager;
-import com.xiao360.baselibrary.util.StatusBarUtil;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
@@ -27,19 +26,6 @@ public abstract class BaseActivity extends RxAppCompatActivity {
 
         //设置视图布局
         setContentView(getLayoutId());
-
-        //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
-        StatusBarUtil.setRootViewFitsSystemWindows(this,isFitsSystemWindows());
-
-        //设置状态栏透明
-        StatusBarUtil.setTranslucentStatus(this);
-
-        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
-        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
-        //设置深色风格
-        if (!StatusBarUtil.setStatusBarDarkTheme(this, true)) {
-            StatusBarUtil.setStatusBarColor(this,0x55000000/*getStatusBarColor()*/);
-        }
 
         //ButterKnife绑定注入
         ButterKnife.bind(this);

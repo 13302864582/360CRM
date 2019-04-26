@@ -1,21 +1,12 @@
 package com.example.moudleb;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.gyf.immersionbar.BarHide;
 import com.xiao360.baselibrary.base.BaseMVPActivity;
 
 import androidx.lifecycle.ViewModel;
 
 @Route(path = "/apptwo/moudleB/activityB")
 public class MainMVPActivityB extends BaseMVPActivity {
-
-    @Override
-    protected boolean setStatusBar() {
-        return true;
-    }
-
-    @Override
-    protected boolean isFitsSystemWindows() {
-        return false;
-    }
 
     @Override
     protected ViewModel getModel() {
@@ -40,6 +31,7 @@ public class MainMVPActivityB extends BaseMVPActivity {
 
     /*@OnClick(R2.id.fzb)
     public void onViewClicked() {
+    .
         // 2. 跳转并携带参数
         ARouter.getInstance().build("/appone/moudleA/activityA")
                 .withLong("key1", 666L)

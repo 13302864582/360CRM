@@ -2,15 +2,36 @@
     <string name="app_name">MoudleTest</string>
 
     <!--模块：我的   菜单item-->
-    <string name="mine_role_permission">角色权限</string>
     <string name="mine_my_file">我的文件</string>
     <string name="mine_my_channel">我的渠道</string>
     <string name="mine_my_output">我的产出</string>
-    <string name="mine_help_doc">帮助说明</string>
+    <string name="mine_role_permission">角色权限</string>
+    <string name="mine_help_doc">意见反馈</string>
 
     <!--模块：底部导航菜单   菜单title-->
     <string name="tabhost_home">首页</string>
     <string name="tabhost_classes">班级</string>
     <string name="tabhost_mine">我的</string>
     <string name="tabhost_student">学员</string>
+    <string name="top_title">我的</string>
+    <string name="top_personal_area">未知</string>
+    <string name="top_personal_name">匿名用户</string>
+    <string name="more">更多</string>
+
+    <!--模块：主页   菜单item-->
+    <string name="home_market_list">市场名单</string>
+    <string name="home_merchandiser">客户跟单</string>
+    <string name="home_registration_fee">报名缴费</string>
+    <string name="home_curriculum">课表</string>
+    <string name="home_attence">考勤</string>
+    <string name="home_prepare_lesson">备课</string>
+    <string name="home_class_review">课评</string>
+    <string name="home_homework">作业</string>
+    <string name="home_work">作品</string>
+    <string name="home_report_forms">报表</string>
+    <string name="home_deal_with">待办</string>
+    <string name="home_setting">设置</string>
+    <string name="deal_with_notify">待办提醒</string>
+    <string name="homework_notify">作业处理</string>
+    <string name="Fee_charging_notify">催费催缴</string>
 </resources>

@@ -32,36 +32,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         this.datas = datas;
     }
 
-
-    /**
-     * 设置单击事件
-     */
-    protected OnItemClickListner onItemClickListner;
-
-    public interface OnItemClickListner {
-        void onItemClickListner(View v, int position);
-    }
-
-    public void setOnItemClickListner(OnItemClickListner onItemClickListner) {
-        this.onItemClickListner = onItemClickListner;
-    }
-
-
-    /**
-     * 设置长按事件
-     */
-    protected OnItemLongClickListner onItemLongClickListner;
-
-    public interface OnItemLongClickListner {
-        void onItemLongClickListner(View v, int position);
-    }
-
-    public void setOnItemLongClickListner(OnItemLongClickListner onItemLongClickListner) {
-        this.onItemLongClickListner = onItemLongClickListner;
-
-
-    }
-
     /**
      * 适配器构造
      */
@@ -89,6 +59,9 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
      */
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
+        if(position>=datas.size()){
+            bindViewHolder(holder, null, position,getItemViewType(position));
+        }else
         bindViewHolder(holder, datas.get(position), position,getItemViewType(position));
     }
 
@@ -102,4 +75,8 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     }
 
     protected abstract void bindViewHolder(BaseViewHolder holder, T data, int position, int viewType);
+
+    public String getString(int str) {
+        return null == context?null:context.getResources().getString(str);
+    }
 }

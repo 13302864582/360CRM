@@ -6,4 +6,5 @@
     <dimen name="big_circle_radius">40dp</dimen>
     <dimen name="small_circle_radius">20dp</dimen>
     <dimen name="min_gap">80dp</dimen>
+    <dimen name="red_point_radius">1dp</dimen>
 </resources>

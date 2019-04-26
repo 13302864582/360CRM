@@ -19,13 +19,6 @@ public class SplashPresenter extends SplashContract.Presenter{
     @Override
     public void onStart() {
         LogUtils.d("onStart: ");
-       /* ArrayList<MenuItem> list = new ArrayList();
-        for(int i=0;i<5;i++){
-            MenuItem menuItem = new MenuItem();
-            menuItem.setText("这是第"+i+"条数据");
-            list.add(menuItem);
-        }
-        mView.notifyData(list);*/
     }
 
     @Override

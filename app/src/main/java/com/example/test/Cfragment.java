@@ -21,7 +21,6 @@ public class Cfragment extends BaseFragment {
 
     @OnClick(R.id.textc)
     public void onViewClicked() {
-        Log.d("tabhost","c=======");
         Navigation.findNavController(rootView).navigate(R.id.action_home);
     }
 }

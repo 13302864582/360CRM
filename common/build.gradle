@@ -44,21 +44,23 @@ dependencies {
 
     api project(':httpsdk') //网络模块
 
-    api "android.arch.navigation:navigation-fragment:1.0.0-alpha01"
+    api "android.arch.navigation:navigation-fragment:1.0.0-alpha01"//底部导航
     api "android.arch.navigation:navigation-ui:1.0.0-alpha01"
 
     //1.1.0 androidx 版本,SmartRefreshLayout,下拉刷新、上拉加载
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-4'
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-4'
 
-   // api 'com.qmuiteam:qmui:1.2.0'
+    // 基础依赖包
+    api 'com.gyf.immersionbar:immersionbar:3.0.0-beta01'
+
     //api project(':GreenDaoSDK')
     api 'com.github.bumptech.glide:glide:4.9.0'
 
     //api 'com.github.goweii:AnyLayer:v2.3.0'  //dialog
     api 'com.afollestad.material-dialogs:core:0.9.6.0'
+   // api 'com.github.imangazalievm:circlemenu:2.0.2' //环形菜单
 
-    api 'com.github.imangazalievm:circlemenu:2.0.2' //环形菜单
-
+    api 'com.qiniu:qiniu-java-sdk:7.2.+'
 }
 

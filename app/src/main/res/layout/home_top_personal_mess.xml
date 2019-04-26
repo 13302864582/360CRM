@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mine_head_height"
+    >
+
+    <!--头布局顶部蓝色背景-->
+    <ImageView
+        android:id="@+id/top_bg_img_blue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/mine_head_bg_blue"
+        android:background="@mipmap/my_head_top_blue"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--头布局底部卡片背景-->
+    <ImageView
+        android:id="@+id/top_card_bg_img"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/home_top_card_bg_img"
+        android:layout_marginLeft="@dimen/home_head_card_marginLef"
+        android:layout_marginRight="@dimen/home_head_card_marginLef"
+        android:scaleType="fitXY"
+        android:src="@mipmap/home_head_card_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/top_img_personal"
+        android:layout_width="@dimen/home_top_img_size"
+        android:layout_height="@dimen/home_top_img_size"
+        android:layout_marginTop="@dimen/home_top_img_marginTop"
+        android:layout_marginLeft="@dimen/home_top_img_marginLeft"
+        android:scaleType="centerInside"
+        android:src="@mipmap/default_home_user"
+        app:layout_constraintStart_toStartOf="@id/top_card_bg_img"
+        app:layout_constraintTop_toTopOf="@id/top_card_bg_img" />
+
+    <TextView
+        android:id="@+id/top_personal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_top_name_marginStart"
+        android:layout_marginTop="@dimen/home_top_name_marginTop"
+        android:text="@string/top_personal_name"
+        android:textColor="@color/home_top_personal_name"
+        android:textSize="@dimen/top_personal_name"
+        app:layout_constraintStart_toEndOf="@id/top_img_personal"
+        app:layout_constraintTop_toTopOf="@id/top_card_bg_img"/>
+
+    <TextView
+        android:id="@+id/top_area_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/home_top_name_marginStart"
+        android:layout_marginTop="@dimen/home_top_area_marginTop"
+        android:text="@string/top_personal_area"
+        android:textColor="@color/home_top_personal_area"
+        android:textSize="@dimen/home_top_area_text"
+        app:layout_constraintStart_toEndOf="@id/top_img_personal"
+        app:layout_constraintTop_toBottomOf="@id/top_personal_name" />
+
+    <ImageView
+        android:id="@+id/top_area_img"
+        android:src="@mipmap/change"
+        android:layout_width="@dimen/top_area_img_width"
+        android:layout_height="@dimen/top_area_img_height"
+        android:layout_marginStart="@dimen/top_area_img_marginStart"
+        android:layout_marginTop="@dimen/top_area_img_marginTop"
+        app:layout_constraintStart_toEndOf="@id/top_area_txt"
+        app:layout_constraintTop_toBottomOf="@id/top_personal_name" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/home_top_img_marginLeft"
+        android:layout_marginRight="@dimen/home_top_img_marginLeft"
+        android:layout_marginTop="13dp"
+        android:background="@color/home_line"
+        app:layout_constraintEnd_toEndOf="@id/top_card_bg_img"
+        app:layout_constraintStart_toStartOf="@id/top_card_bg_img"
+        app:layout_constraintTop_toBottomOf="@id/top_area_txt" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/top_num_txt_margin"
+        android:layout_marginTop="@dimen/top_num_txt_top"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/top_card_bg_img"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <TextView
+            android:id="@+id/top_schedule_num_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textColor="@color/home_top_personal_area"
+            android:textSize="@dimen/home_top_schedule_text" />
+
+        <TextView
+            android:id="@+id/top_schedule_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_txt_marginTop"
+            android:text="@string/deal_with_notify"
+            android:textColor="@color/home_botom_schedule_text"
+            android:textSize="@dimen/home_botom_schedule_text"
+            app:layout_constraintStart_toStartOf="@id/top_card_bg_img"
+            app:layout_constraintTop_toBottomOf="@id/top_schedule_num_txt" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_num_txt_top"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <TextView
+            android:id="@+id/top_homework_num_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textColor="@color/home_top_personal_area"
+            android:textSize="@dimen/home_top_schedule_text" />
+
+        <TextView
+            android:id="@+id/top_homework_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_txt_marginTop"
+            android:text="@string/homework_notify"
+            android:textColor="@color/home_botom_schedule_text"
+            android:textSize="@dimen/home_botom_schedule_text"
+            app:layout_constraintStart_toStartOf="@id/top_card_bg_img"
+            app:layout_constraintTop_toBottomOf="@id/top_schedule_num_txt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_num_txt_top"
+        android:layout_marginEnd="@dimen/top_num_txt_margin"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/top_card_bg_img"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <TextView
+            android:id="@+id/top_renew_num_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textColor="@color/home_top_personal_area"
+            android:textSize="@dimen/home_top_schedule_text" />
+
+        <TextView
+            android:id="@+id/top_renew_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_txt_marginTop"
+            android:text="@string/Fee_charging_notify"
+            android:textColor="@color/home_botom_schedule_text"
+            android:textSize="@dimen/home_botom_schedule_text"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

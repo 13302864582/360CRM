@@ -28,6 +28,11 @@ public class GlideUtils {
             Glide.with(mContext).load(path).into(mImageView);
         }
 
+    //默认加载
+    public static void loadImageView(Context mContext, Object path, ImageView mImageView) {
+        Glide.with(mContext).load(path).into(mImageView);
+    }
+
         //加载指定大小
         public static void loadImageViewSize(Context mContext, String path, int width, int height, ImageView mImageView) {
             Glide.with(mContext).load(path).override(width, height).into(mImageView);
@@ -132,4 +137,14 @@ public class GlideUtils {
             //清理内存缓存  可以在UI主线程中进行
             Glide.get(mContext).clearMemory();
         }
+
+
+    public static void loadImageViewInside(Context context, Object path, int errRes, int defRes, ImageView view) {
+        Glide.with(context).load(path)
+                .error(errRes)
+                .placeholder(defRes)
+                .centerInside()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(view);
+    }
 }

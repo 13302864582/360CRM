@@ -15,7 +15,7 @@
     <!--首页-->
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.example.test.Afragment"
+        android:name="com.lantel.home.HomeFragment"
         android:label="HomeFragment"
         >
     </fragment>

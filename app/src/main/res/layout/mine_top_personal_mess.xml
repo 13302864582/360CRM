@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/mine_head_height"
+    >
+
+    <!--头布局顶部蓝色背景-->
+    <ImageView
+        android:id="@+id/top_bg_img_blue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/mine_head_bg_blue"
+        android:background="@mipmap/my_head_top_blue"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--头布局底部卡片背景-->
+    <ImageView
+        android:id="@+id/top_card_bg_img"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/mine_head_card_height"
+        android:layout_marginLeft="@dimen/mine_head_card_marginLef"
+        android:layout_marginEnd="@dimen/mine_head_card_marginEnd"
+        android:scaleType="fitXY"
+        android:src="@mipmap/my_head_card_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/top_img_circle_personal"
+        android:layout_width="@dimen/top_img_circle_size"
+        android:layout_height="@dimen/top_img_circle_size"
+
+        android:src="@mipmap/default_user"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/top_personal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/top_personal_name_marginTop"
+        android:layout_marginEnd="8dp"
+        android:text="@string/top_personal_name"
+        android:textColor="@color/top_personal_name"
+        android:textSize="@dimen/top_personal_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top_card_bg_img" />
+
+    <TextView
+        android:id="@+id/top_personal_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_personal_area_marginTop"
+        android:text="@string/top_personal_area"
+        android:textColor="@color/top_personal_area"
+        android:textSize="@dimen/top_personal_area"
+        app:layout_constraintEnd_toEndOf="@+id/top_card_bg_img"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/top_card_bg_img"
+        app:layout_constraintTop_toTopOf="@id/top_card_bg_img" />
+
+    <ImageView
+        android:id="@+id/top_img_position"
+        android:layout_width="@dimen/top_img_position"
+        android:layout_height="@dimen/top_img_position"
+        android:layout_marginTop="@dimen/top_personal_position_marginTop"
+        android:layout_marginLeft="@dimen/top_personal_position_marginLeft"
+        android:src="@mipmap/identify"
+        android:textColor="@color/top_personal_area"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top_card_bg_img" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/grid_position"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/top_personal_list_position_height"
+        android:layout_marginStart="@dimen/top_personal_list_position_marginLeft"
+        android:layout_marginEnd="@dimen/top_personal_list_position_marginRight"
+        android:layout_marginTop="@dimen/top_personal_position_marginTop"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_card_bg_img">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>

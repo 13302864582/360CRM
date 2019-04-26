@@ -14,6 +14,12 @@ public class MenuItemModel extends BaseModel{
         this.flag_action = flag_action;
     }
 
+    public MenuItemModel(int icon, int flag_action, String title) {
+        super(-1,title);
+        this.icon = icon;
+        this.flag_action = flag_action;
+    }
+
     public int getIcon() {
         return icon;
     }

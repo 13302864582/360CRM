@@ -10,7 +10,7 @@ public abstract class BaseRxObserver<T> implements Observer<T> {
     private static final String TAG = "BaseObserver";
     @Override
     public void onSubscribe(Disposable d) {
-        Log.d(TAG, "onSubscribe: " );
+        //Log.d(TAG, "onSubscribe: " );
     }
 
     @Override
@@ -25,7 +25,7 @@ public abstract class BaseRxObserver<T> implements Observer<T> {
 
     @Override
     public void onComplete() {
-        Log.d(TAG, "onComplete: " );
+       // Log.d(TAG, "onComplete: " );
     }
 
     public abstract void onSuccess(T demo);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--===========================================模块：我的===================================================-->
+    <!--===========================================模块：我的   列表 ===================================================-->
     <!--列表中的item布局，左边图标属性-->
     <dimen name="mine_itemIcon_left_width">24dp</dimen>
     <dimen name="mine_itemIcon_left_height">20dp</dimen>
@@ -18,5 +18,102 @@
     <!--列表item高度属性-->
     <dimen name="mine_item_height">60dp</dimen>
 
+    <!--列表头部属性-->
+    <!--头部局高度-->
+    <dimen name="mine_head_height">190dp</dimen>
 
+    <!--蓝色背景高度-->
+    <dimen name="mine_head_bg_blue">145dp</dimen>
+
+    <!--白色卡片高度-->
+    <dimen name="mine_head_card_height">157dp</dimen>
+    <dimen name="mine_head_card_marginLef">6dp</dimen>
+    <dimen name="mine_head_card_marginEnd">6dp</dimen>
+    <dimen name="mine_head_card_paddingBottom">6dp</dimen>
+
+    <!--顶部标题-->
+    <dimen name="top_title">18sp</dimen>
+
+    <!--左右小图标宽高，左右边距，顶部边距-->
+    <dimen name="top_img_width">24dp</dimen>
+    <dimen name="top_img_height">24dp</dimen>
+    <dimen name="top_img_marginHorizontal">19dp</dimen>
+    <dimen name="top_img_margin_top">34dp</dimen>
+
+    <!--圆形图标宽高，顶部边距-->
+    <dimen name="top_img_circle_size">63dp</dimen>
+    <dimen name="top_img_circle_marginTop">11dp</dimen>
+
+    <!--用户名字，字体大小，边距-->
+    <dimen name="top_personal_name">17sp</dimen>
+    <dimen name="top_personal_name_marginTop">47dp</dimen>
+    <dimen name="top_personal_area_marginTop">76dp</dimen>
+
+    <!--职位信息图标大小，边距-->
+    <dimen name="top_img_position">17dp</dimen>
+    <dimen name="top_personal_position_marginLeft">39dp</dimen>
+    <dimen name="top_personal_position_marginTop">110dp</dimen>
+
+    <!--职位信息，字体大小-->
+    <dimen name="mine_text_position">13sp</dimen>
+
+    <!--职位信息，item中间的划线宽度，长短-->
+    <dimen name="common_vew_raw_padding">0.5dp</dimen>
+    <dimen name="common_vew_vertical_padding">3dp</dimen>
+
+    <!--职位信息列表高度，边距-->
+    <dimen name="top_personal_list_position_height">43dp</dimen>
+    <dimen name="top_personal_list_position_marginRight">39dp</dimen>
+    <dimen name="top_personal_list_position_marginLeft">68dp</dimen>
+
+    <!--消息红点，大小，边距-->
+    <dimen name="redpoint_radis">4dp</dimen>
+    <dimen name="top_redpointmarginLeft">39dp</dimen>
+    <dimen name="top_redpointmarginTop">16dp</dimen>
+
+    <!--===========================================模块：主页   列表 ===================================================-->
+    <!--头部局高度-->
+    <dimen name="home_head_height">180dp</dimen>
+    <!--头部头像大小，边距-->
+    <dimen name="home_top_img_size">75dp</dimen>
+    <dimen name="home_top_img_marginTop">14dp</dimen>
+    <dimen name="home_top_img_marginLeft">30dp</dimen>
+
+    <!--头部用户名边距-->
+    <dimen name="home_top_name_marginStart">35dp</dimen>
+    <dimen name="home_top_name_marginTop">27dp</dimen>
+
+    <!--头部地区边距-->
+    <dimen name="top_personal_area">11sp</dimen>
+    <dimen name="home_top_area_marginTop">17dp</dimen>
+    <dimen name="home_top_area_text">13sp</dimen>
+
+    <!--头部地区切换图标-->
+    <dimen name="top_area_img_width">13dp</dimen>
+    <dimen name="top_area_img_height">10dp</dimen>
+    <dimen name="top_area_img_marginStart">6dp</dimen>
+    <dimen name="top_area_img_marginTop">21dp</dimen>
+
+    <!--头部待办提醒等，统一样式-->
+    <dimen name="home_botom_schedule_text">11sp</dimen>
+    <dimen name="home_top_schedule_text">23sp</dimen>
+    <dimen name="top_num_txt_top">5dp</dimen>
+    <dimen name="top_num_txt_margin">48dp</dimen>
+    <dimen name="top_txt_marginTop">4dp</dimen>
+
+    <!--头部卡片样式-->
+    <dimen name="home_head_card_marginLef">15dp</dimen>
+    <dimen name="home_top_card_bg_img">170dp</dimen>
+
+    <!--AD广告样式-->
+    <dimen name="home_ad_margin">16dp</dimen>
+    <dimen name="home_ad_height">158dp</dimen>
+    <dimen name="home_ad_item">188dp</dimen>
+
+    <!--主页菜单样式-->
+    <dimen name="home_menu_text">11sp</dimen>
+    <dimen name="home_menu_img_width">25dp</dimen>
+    <dimen name="home_menu_img_height">30dp</dimen>
+    <dimen name="home_menu_img_marginBottom">10dp</dimen>
+    <dimen name="home_menu_item_height">85dp</dimen>
 </resources>

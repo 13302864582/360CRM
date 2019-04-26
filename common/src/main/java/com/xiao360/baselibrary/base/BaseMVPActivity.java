@@ -2,16 +2,14 @@ package com.xiao360.baselibrary.base;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Window;
 import android.view.WindowManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.cangwang.core.ModuleBus;
+import com.example.baselibrary.R;
 import com.xiao360.baselibrary.util.AppManager;
-import com.xiao360.baselibrary.util.StatusBarUtil;
 import com.xiao360.baselibrary.util.TUtil;
 import com.xiao360.baselibrary.util.ToastUitl;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -35,22 +33,6 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
 
         //设置视图布局
         setContentView(getLayoutId());
-
-        if(setStatusBar()){
-            //设置状态栏透明
-            StatusBarUtil.setTranslucentStatus(this);
-
-            //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
-            StatusBarUtil.setRootViewFitsSystemWindows(this,isFitsSystemWindows());
-
-            //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
-            //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
-            //设置深色风格
-            if (!StatusBarUtil.setStatusBarDarkTheme(this, true)) {
-                StatusBarUtil.setStatusBarColor(this,0x55000000/*getStatusBarColor()*/);
-            }
-        }
-
         //ButterKnife绑定注入
         ButterKnife.bind(this);
 
@@ -80,16 +62,7 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         this.initView();
     }
 
-    protected abstract boolean setStatusBar();
-
-    //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
-    //这样半透明+白=灰, 状态栏的文字能看得清
-    //protected abstract int getStatusBarColor();
-
-    protected abstract boolean isFitsSystemWindows();
-
     protected abstract E getModel();
-
 
     /**
      * 设置layout前配置
@@ -97,10 +70,6 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
     private void doBeforeSetcontentView() {
         // 把actvity放到application栈中管理
         AppManager.getAppManager().addActivity(this);
-        // 无标题
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        // 设置竖屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     /*********************子类实现*****************************/
     //获取布局文件
@@ -254,4 +223,49 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
     }
+
+
+
+
+   /* ImmersionBar.with(this)
+            .transparentStatusBar()  //透明状态栏，不写默认透明色
+                 .transparentNavigationBar()  //透明导航栏，不写默认黑色(设置此方法，fullScreen()方法自动为true)
+                 .transparentBar()             //透明状态栏和导航栏，不写默认状态栏为透明色，导航栏为黑色（设置此方法，fullScreen()方法自动为true）
+                 .statusBarColor(R.color.colorPrimary)     //状态栏颜色，不写默认透明色
+                 .navigationBarColor(R.color.colorPrimary) //导航栏颜色，不写默认黑色
+                 .barColor(R.color.colorPrimary)  //同时自定义状态栏和导航栏颜色，不写默认状态栏为透明色，导航栏为黑色
+                 .statusBarAlpha(0.3f)  //状态栏透明度，不写默认0.0f
+                 .navigationBarAlpha(0.4f)  //导航栏透明度，不写默认0.0F
+                 .barAlpha(0.3f)  //状态栏和导航栏透明度，不写默认0.0f
+                 .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+                 .navigationBarDarkIcon(true) //导航栏图标是深色，不写默认为亮色
+                 .autoDarkModeEnable(true) //自动状态栏字体和导航栏图标变色，必须指定状态栏颜色和导航栏颜色才可以自动变色哦
+                 .autoStatusBarDarkModeEnable(true,0.2f) //自动状态栏字体变色，必须指定状态栏颜色才可以自动变色哦
+                 .autoNavigationBarDarkModeEnable(true,0.2f) //自动导航栏图标变色，必须指定导航栏颜色才可以自动变色哦
+                 .flymeOSStatusBarFontColor(R.color.btn3)  //修改flyme OS状态栏字体颜色
+                 .fullScreen(true)      //有导航栏的情况下，activity全屏显示，也就是activity最下面被导航栏覆盖，不写默认非全屏
+                 .hideBar(BarHide.FLAG_HIDE_BAR)  //隐藏状态栏或导航栏或两者，不写默认不隐藏
+                 .addViewSupportTransformColor(toolbar)  //设置支持view变色，可以添加多个view，不指定颜色，默认和状态栏同色，还有两个重载方法
+                 .titleBar(view)    //解决状态栏和布局重叠问题，任选其一
+                 .statusBarView(view)  //解决状态栏和布局重叠问题，任选其一
+                 .fitsSystemWindows(true)    //解决状态栏和布局重叠问题，任选其一，默认为false，当为true时一定要指定statusBarColor()，不然状态栏为透明色
+                 .supportActionBar(true) //支持ActionBar使用
+                 .statusBarColorTransform(R.color.orange)  //状态栏变色后的颜色
+                 .navigationBarColorTransform(R.color.orange) //导航栏变色后的颜色
+                 .barColorTransform(R.color.orange)  //状态栏和导航栏变色后的颜色
+                 .removeSupportView(toolbar)  //移除指定view支持
+                 .removeSupportAllView() //移除全部view支持
+                 .addTag("tag")  //给以上设置的参数打标记
+                 .getTag("tag")  //根据tag获得沉浸式参数
+                 .reset()  //重置所以沉浸式参数
+                 .keyboardEnable(true)  //解决软键盘与底部输入框冲突问题，默认为false
+                 .setOnKeyboardListener(new OnKeyboardListener() {    //软键盘监听回调
+                    @Override
+                        public void onKeyboardChange(boolean isPopup, int keyboardHeight) {
+                            LogUtils.e(isPopup);  //isPopup为true，软键盘弹出，为false，软键盘关闭
+                            }
+                        })
+                 .keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)  //单独指定软键盘模式
+                 .setOnNavigationBarListener(onNavigationBarListener) //导航栏显示隐藏监听，目前只支持华为和小米手机
+                 .init();  //必须调用方可沉浸式*/
 }

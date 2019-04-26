@@ -1,29 +1,75 @@
 package com.lantel.mine;
 
-import com.xiao360.baselibrary.base.BaseMVPFragment;
-import com.xiao360.baselibrary.base.BaseModel;
+import android.view.View;
+
 import com.example.moudletest.R;
-import com.example.moudletest.R2;
+import com.lantel.AppConfig;
+import com.lantel.common.fragment.TbHeadListFragment;
 import com.lantel.mine.list.adpter.MineRecycleViewAdapter;
 import com.lantel.mine.mvp.MineContract;
 import com.lantel.mine.mvp.MineModel;
 import com.lantel.mine.mvp.MinePresenter;
+import com.xiao360.baselibrary.base.BaseModel;
 import com.xiao360.baselibrary.util.LogUtils;
-
 import java.util.ArrayList;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
 
-public class MineFragment extends BaseMVPFragment<MinePresenter, MineModel> implements MineContract.View,MineRecycleViewAdapter.OnMenuClickListener {
-    @BindView(R2.id.mine_Recycleview)
-    RecyclerView mineRecycleview;
-
+public class MineFragment extends TbHeadListFragment<MinePresenter, MineModel> implements MineContract.View, MineRecycleViewAdapter.OnMenuClickListener {
     private MineRecycleViewAdapter adapter;
 
     @Override
-    protected int getBackgroundColor() {
-        return android.R.color.white;
+    protected void initViewSelf() {
+        topImgLeft.setImageResource(R.mipmap.my_head_mess);
+        topImgRight.setImageResource(R.mipmap.my_head_setting);
+    }
+
+    @Override
+    protected int getTitle() {
+        return R.string.tabhost_mine;
+    }
+
+    @Override
+    protected void clickTopLeft() {
+        topRedpoint.setVisibility(View.INVISIBLE);
+        LogUtils.d("===============top_img_left");
+    }
+
+    @Override
+    protected void clickTopRight() {
+        LogUtils.d("===============clickTopRight");
+    }
+
+    @Override
+    protected RecyclerView.Adapter getAdapter() {
+        adapter = new MineRecycleViewAdapter(getContext(), null);
+        adapter.setOnMenuClickListener(this);
+        return adapter;
+    }
+
+    @Override
+    public void onMenuClick(int action) {
+        switch (action) {
+            case AppConfig.ACTION_FILE:
+                LogUtils.d("ACTION_FILE");
+                break;
+            case AppConfig.ACTION_CHANNEL:
+                LogUtils.d("ACTION_CHANNEL");
+                break;
+            case AppConfig.ACTION_OUTPUT:
+                LogUtils.d("ACTION_OUTPUT");
+                break;
+            case AppConfig.ACTION_ROLE_PERMISSION:
+                LogUtils.d("ACTION_ROLE_PERMISSION");
+                break;
+            case AppConfig.ACTION_FEEDBACK:
+                LogUtils.d("ACTION_FEEDBACK");
+                break;
+        }
+    }
+
+    @Override
+    public void notifyData(ArrayList<BaseModel> list) {
+        adapter.refreshData(list);
     }
 
     @Override
@@ -32,49 +78,7 @@ public class MineFragment extends BaseMVPFragment<MinePresenter, MineModel> impl
     }
 
     @Override
-    protected int getLayoutResource() {
-        return R.layout.moudle_mine;
-    }
-
-    @Override
     public void initPresenter() {
         mPresenter.setVM(this, mModel);
-    }
-
-    @Override
-    protected void initView() {
-        mineRecycleview.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new MineRecycleViewAdapter(getContext(), null);
-        adapter.setOnMenuClickListener(this);
-        mineRecycleview.setAdapter(adapter);
-    }
-
-    @Override
-    public void notifyData(ArrayList<BaseModel> list) {
-        adapter.refreshData(list);
-    }
-
-    /**
-     * 菜单点击跳转**
-     */
-    @Override
-    public void onMenuClick(int action) {
-        switch (action){
-            case MineRecycleViewAdapter.ACTION_FILE:
-                LogUtils.d("ACTION_FILE");
-                break;
-            case MineRecycleViewAdapter.ACTION_CHANNEL:
-                LogUtils.d("ACTION_CHANNEL");
-                break;
-            case MineRecycleViewAdapter.ACTION_OUTPUT:
-                LogUtils.d("ACTION_OUTPUT");
-                break;
-            case MineRecycleViewAdapter.ACTION_ROLE_PERMISSION:
-                LogUtils.d("ACTION_ROLE_PERMISSION");
-                break;
-            case MineRecycleViewAdapter.ACTION_FEEDBACK:
-                LogUtils.d("ACTION_FEEDBACK");
-                break;
-        }
     }
 }
