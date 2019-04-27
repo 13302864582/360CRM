@@ -81,10 +81,10 @@ public class HomePresenter extends HomeContract.Presenter {
         list.add(model);
 
         //AD数据
-        ArrayList<String> imgs = new ArrayList<>();
+        ArrayList<Object> imgs = new ArrayList<>();
         imgs.add("https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg");
         imgs.add("http://img5.duitang.com/uploads/item/201506/07/20150607110911_kY5cP.jpeg");
-        imgs.add("https://t1.hddhhn.com/uploads/tu/201812/418/152IQ251-6.jpg");
+        imgs.add(R.mipmap.banner);
 
         ADModel adModel = new ADModel(imgs);
         list.add(adModel);

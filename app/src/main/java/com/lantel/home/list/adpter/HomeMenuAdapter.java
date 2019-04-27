@@ -49,7 +49,7 @@ public class HomeMenuAdapter extends BaseRecyclerViewAdapter<MenuItemModel>{
     }
 
     @Override
-    protected void bindViewHolder(BaseViewHolder holder, MenuItemModel data, int position, int viewType) {
+    protected void bindViewHolder(BaseViewHolder holder, final MenuItemModel data, int position, int viewType) {
         MenuItemViewHolder itemViewHolder = (MenuItemViewHolder) holder;
         if(position == getItemCount()-1){
             itemViewHolder.title.setText(getString(R.string.more));

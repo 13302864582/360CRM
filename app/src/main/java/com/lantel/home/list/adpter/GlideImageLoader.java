@@ -21,8 +21,8 @@ public class GlideImageLoader extends ImageLoader {
     public void displayImage(Context context, Object path, ImageView imageView) {
         //Glide 加载图片简单用法
         Glide.with(context).load(path)
-                .error(R.mipmap.ic_launcher)
-                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.banner)
+                .placeholder(R.mipmap.banner)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .apply(RequestOptions.bitmapTransform(new RoundedCorners(DisplayUtil.dip2px(15))))
                 .into(imageView);

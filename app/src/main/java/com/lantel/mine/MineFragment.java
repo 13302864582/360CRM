@@ -21,6 +21,8 @@ public class MineFragment extends TbHeadListFragment<MinePresenter, MineModel> i
     protected void initViewSelf() {
         topImgLeft.setImageResource(R.mipmap.my_head_mess);
         topImgRight.setImageResource(R.mipmap.my_head_setting);
+        statebarView.setBackgroundResource(R.mipmap.statebar_bg);
+        toolbar.setBackgroundResource(R.mipmap.toolbar_bg);
     }
 
     @Override

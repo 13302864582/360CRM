@@ -33,8 +33,6 @@ import androidx.recyclerview.widget.RecyclerView;
  * Time: 18:18
  */
 public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
-
-
     /**
      * 点击事件
      */
@@ -47,7 +45,6 @@ public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
     public void setOnMenuClickListener(OnMenuClickListener mListener) {
         this.mListener = mListener;
     }
-
 
     /**
      * 构造器
@@ -95,7 +92,7 @@ public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
     private void bindItemHolder(BaseViewHolder viewHolder, BaseModel data, int position) {
         MenuItemModel model = (MenuItemModel) data;
         MineViewHolder itemHolder = (MineViewHolder) viewHolder;
-        int action = model.getFlag_action();
+        final int action = model.getFlag_action();
         itemHolder.icon.setImageResource(model.getIcon());
         itemHolder.title.setText(model.getTitle());
         itemHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +126,7 @@ public class MineRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
                         .into(headViewHolder.top_circle_personal);
 
         MineHeadPositionAdapter adapter =new MineHeadPositionAdapter(context,headerBean.getPositions());
-        RecyclerView grid_position = headViewHolder.top_grid_position;
+        final RecyclerView grid_position = headViewHolder.top_grid_position;
         GridItemDecoration divider = new GridItemDecoration.Builder(context)
                 .setVerticalSpan(R.dimen.common_vew_raw_padding)
                 .setHorizontalSpan(R.dimen.common_vew_vertical_padding)

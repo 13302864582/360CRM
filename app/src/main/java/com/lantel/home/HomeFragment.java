@@ -3,6 +3,7 @@ package com.lantel.home;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
+
 import com.example.moudletest.R;
 import com.lantel.AppConfig;
 import com.lantel.common.fragment.TbHeadListFragment;
@@ -11,11 +12,17 @@ import com.lantel.home.list.adpter.HomeRecycleViewAdapter;
 import com.lantel.home.mvp.HomeContract;
 import com.lantel.home.mvp.HomeModel;
 import com.lantel.home.mvp.HomePresenter;
+import com.qiniu.android.common.FixedZone;
+import com.qiniu.android.http.ResponseInfo;
+import com.qiniu.android.storage.Configuration;
+import com.qiniu.android.storage.UpCompletionHandler;
+import com.qiniu.android.storage.UploadManager;
 import com.xiao360.baselibrary.base.BaseModel;
 import com.xiao360.baselibrary.util.LogUtils;
 import com.yzq.zxinglibrary.android.CaptureActivity;
 import com.yzq.zxinglibrary.bean.ZxingConfig;
 import com.yzq.zxinglibrary.common.Constant;
+import org.json.JSONObject;
 import java.util.ArrayList;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,7 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * Date: 2019/4/26
  * Time: 14:50
  */
-public class HomeFragment extends TbHeadListFragment<HomePresenter,HomeModel> implements HomeContract.View {
+public class HomeFragment extends TbHeadListFragment<HomePresenter, HomeModel> implements HomeContract.View {
     private HomeRecycleViewAdapter adapter;
 
     @Override
@@ -36,6 +43,8 @@ public class HomeFragment extends TbHeadListFragment<HomePresenter,HomeModel> im
         topImgLeft.setImageResource(R.mipmap.scan);
         topImgRight.setImageResource(R.mipmap.add);
         topRedpoint.setVisibility(View.GONE);
+        statebarView.setBackgroundResource(R.mipmap.statebar_bg);
+        toolbar.setBackgroundResource(R.mipmap.toolbar_bg);
     }
 
     @Override
@@ -88,7 +97,27 @@ public class HomeFragment extends TbHeadListFragment<HomePresenter,HomeModel> im
     @Override
     protected void clickTopRight() {
         //TODO 主页右边点击事件
-        LogUtils.d("===============clickTopRight");
+        Configuration config = new Configuration.Builder()
+                .chunkSize(512 * 1024)        // 分片上传时，每片的大小。 默认256K
+                .putThreshhold(1024 * 1024)   // 启用分片上传阀值。默认512K
+                .connectTimeout(10)           // 链接超时。默认10秒
+                .useHttps(true)               // 是否使用https上传域名
+                .responseTimeout(60)          // 服务器响应超时。默认60秒
+                /* .recorder(recorder)           // recorder分片上传时，已上传片记录器。默认null
+                 .recorder(recorder, keyGen)   // keyGen 分片上传时，生成标识符，用于片记录器区分是那个文件的上传记录*/
+                .zone(FixedZone.zone2)        // 设置区域，指定不同区域的上传域名、备用域名、备用IP。
+                .build();
+
+        // 重用uploadManager。一般地，只需要创建一个uploadManager对象
+        UploadManager uploadManager = new UploadManager(config);
+        String str = "fz";
+        byte[] bs = str.getBytes();
+        uploadManager.put(bs, "fztest.txt", "p9mUPzEN5ihLHctwvBIk5w9MBckHvFSrXadVRlPY:4g38GIZD-mQeO7sf5vhst2cpb5Q=:eyJzY29wZSI6Inlnd3FtcyIsImRlYWRsaW5lIjoxNTU2MzQzNTY0fQ==", new UpCompletionHandler() {
+            @Override
+            public void complete(String key, ResponseInfo info, JSONObject response) {
+                LogUtils.d("====Uploadcomplete====key:" + key + "===info:" + info.toString() + "===" + response.toString());
+            }
+        }, null);
     }
 
     @Override
@@ -96,14 +125,14 @@ public class HomeFragment extends TbHeadListFragment<HomePresenter,HomeModel> im
         /**
          * 设置主页适配器
          */
-        adapter =  new HomeRecycleViewAdapter(getContext(),null);
+        adapter = new HomeRecycleViewAdapter(getContext(), null);
         adapter.setmListener(new HomeMenuAdapter.OnMenuClickListener() {
             /**
              * 菜单点击选项
              */
             @Override
             public void onMenuClick(int action) {
-                LogUtils.d(action+"===============onMenuClick");
+                LogUtils.d(action + "===============onMenuClick");
             }
 
             /**
@@ -131,7 +160,7 @@ public class HomeFragment extends TbHeadListFragment<HomePresenter,HomeModel> im
      */
     @Override
     public void initPresenter() {
-        mPresenter.setVM(this,mModel);
+        mPresenter.setVM(this, mModel);
     }
 
 

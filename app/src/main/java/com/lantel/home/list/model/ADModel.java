@@ -9,14 +9,14 @@ import java.util.ArrayList;
 
 public class ADModel extends BaseModel{
     //图标
-    private ArrayList<String> img;
+    private ArrayList<Object> img;
 
     public ADModel(ArrayList img) {
         super(AppConfig.TYPE_AD,"");
         this.img = img;
     }
 
-    public ArrayList<String> getIcon() {
+    public ArrayList<Object> getIcon() {
         return img;
     }
 

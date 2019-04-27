@@ -14,10 +14,9 @@ ext{
 
  dependencies = [
          //测试
-         junit : "junit:junit:4.12",
-         testImplementation : "junit:junit:4.12",
-         androidTestImplementation : "com.android.support.test:runner:1.0.2",
-         androidTestImplementation : "com.android.support.test.espresso:espresso-core:3.0.2",
+         testImplementation_junit : "junit:junit:4.12",
+         androidTestImplementation_junit : "com.android.support.test:runner:1.0.2",
+         androidTestImplementation_espresso : "com.android.support.test.espresso:espresso-core:3.0.2",
 
          //butterknife依赖
          butterknife : "com.jakewharton:butterknife:10.1.0",
@@ -54,11 +53,28 @@ ext{
 
          //Glide
          glide : "com.github.bumptech.glide:glide:4.9.0",
+         glideCompiler : "com.github.bumptech.glide:compiler:4.9.0",
 
          //材料设计
          material :  "com.google.android.material:material:1.0.0+",
 
          //Andpermission权限申请
-         permission : "com.yanzhenjie.permission:x:2.0.1"
+         permission : "com.yanzhenjie.permission:x:2.0.1",
+
+         //轮播图
+         banner : "com.youth.banner:banner:1.4.10",
+
+         //二维码
+         zxing : "com.github.yuzhiqiang1993:zxing:2.2.5",
+
+         //官方导航组件
+         navigationFragment : "android.arch.navigation:navigation-fragment:1.0.0-alpha01",
+         navigationUi : "android.arch.navigation:navigation-ui:1.0.0-alpha01",
+
+         //状态栏
+         immersionbar : "com.gyf.immersionbar:immersionbar:3.0.0-beta01",
+
+         // 七牛云上传
+         qiniu : "com.qiniu:qiniu-android-sdk:7.3.15"
  ]
 }

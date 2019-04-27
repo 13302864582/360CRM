@@ -12,9 +12,13 @@ import com.lantel.app.mvp.AppModel;
 import com.lantel.app.mvp.AppPresenter;
 import com.xiao360.baselibrary.base.BaseMVPActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import butterknife.BindView;
 
+/**
+ * app启动activity
+ * */
 public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> implements AppContract.View {
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigation;
@@ -45,7 +49,6 @@ public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> impl
 
         navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.my_nav_host_fragment);
         mNavController = navHost.getNavController();
-
         navigate(R.id.action_mine);
         bottomNavigation.setSelectedItemId(R.id.item_mine);
 
@@ -71,7 +74,14 @@ public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> impl
         if(action_id == mLastNavId)
             return;
         mLastNavId = action_id;
-        mNavController.navigate(action_id);
+        NavOptions.Builder builder = new NavOptions.Builder()
+                .setLaunchSingleTop(true)
+                .setEnterAnim(R.anim.nav_default_enter_anim)
+                .setExitAnim(R.anim.nav_default_exit_anim)
+                .setPopEnterAnim(R.anim.nav_default_pop_enter_anim)
+                .setPopExitAnim(R.anim.nav_default_pop_exit_anim);
+        NavOptions options = builder.build();
+        mNavController.navigate(action_id,null,options);
     }
 
 }

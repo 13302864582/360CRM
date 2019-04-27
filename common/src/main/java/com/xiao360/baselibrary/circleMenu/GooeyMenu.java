@@ -1,6 +1,6 @@
 package com.xiao360.baselibrary.circleMenu;
 
-import android.animation.Animator;
+
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -18,7 +18,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.LinearInterpolator;
 import com.example.baselibrary.R;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,8 +81,6 @@ public class GooeyMenu extends View {
         if (attrs != null) {
             TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.GooeyMenu, 0, 0);
             try {
-
-
                 mNumberOfMenu = typedArray.getInt(R.styleable.GooeyMenu_no_of_menu, DEFUALT_MENU_NO);
                 mFabButtonRadius = (int) typedArray.getDimension(R.styleable.GooeyMenu_fab_radius, getResources().getDimension(R.dimen.big_circle_radius));
                 mMenuButtonRadius = (int) typedArray.getDimension(R.styleable.GooeyMenu_menu_radius, getResources().getDimension(R.dimen.small_circle_radius));

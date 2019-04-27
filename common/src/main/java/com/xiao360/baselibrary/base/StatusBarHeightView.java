@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 
 public class StatusBarHeightView extends LinearLayout {
     private int statusBarHeight;
-    private int type;
 
     public StatusBarHeightView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -42,23 +41,10 @@ public class StatusBarHeightView extends LinearLayout {
             //低版本 直接设置0
             statusBarHeight = 0;
         }
-        if (attrs != null) {
-            TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.StatusBarHeightView);
-            type = typedArray.getInt(R.styleable.StatusBarHeightView_use_type, 0);
-            typedArray.recycle();
-        }
-        if (type == 1) {
-            setPadding(getPaddingLeft(), statusBarHeight, getPaddingRight(), getPaddingBottom());
-        }
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if (type == 0) {
-            setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
-                    statusBarHeight);
-        } else {
-            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        }
+        setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),statusBarHeight);
     }
 }

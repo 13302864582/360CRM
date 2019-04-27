@@ -19,6 +19,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import butterknife.ButterKnife;
 
+/**
+ * activity基类
+ * BaseActivityPresenter T 控制器
+ * ViewModel E 数据model
+ * */
 public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends ViewModel> extends RxAppCompatActivity {
     public T mPresenter;
     public E mModel;
@@ -29,6 +34,7 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //activity设置
         doBeforeSetcontentView();
 
         //设置视图布局
@@ -42,6 +48,7 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         //模块通信绑定
         ModuleBus.getInstance().register(this);
 
+        //上下文
         mContext = this;
 
         //反射自动生成Presenter控制器
@@ -50,6 +57,7 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         //通过子类生成Model
         mModel=this.getModel();
 
+        //控制器设置上下文
         if(mPresenter!=null){
             mPresenter.context=this;
         }
@@ -59,6 +67,8 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
 
         //初始化Presenter
         this.initPresenter();
+
+        //初始化view视图
         this.initView();
     }
 
@@ -74,8 +84,10 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
     /*********************子类实现*****************************/
     //获取布局文件
     public abstract int getLayoutId();
+
     //简单页面无需mvp就不用管此方法即可,完美兼容各种实际场景的变通
     public abstract void initPresenter();
+
     //初始化view
     public abstract void initView();
 
@@ -96,8 +108,7 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
     /**
      * 含有Bundle通过Class跳转界面
      **/
-    public void startActivityForResult(Class<?> cls, Bundle bundle,
-                                       int requestCode) {
+    public void startActivityForResult(Class<?> cls, Bundle bundle,int requestCode) {
         Intent intent = new Intent();
         intent.setClass(this, cls);
         if (bundle != null) {
@@ -133,6 +144,9 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         }
     }
 
+    /**
+     * 开启浮动加载进度条
+     */
     protected E FindModel(Class<E> modelClass, ViewModelProvider.Factory factory) {
         return ViewModelProviders.of(this,factory).get(modelClass);
     }
@@ -191,23 +205,6 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
     public void showLongToast(String text) {
         ToastUitl.showLong(text);
     }
-    /**
-     * 带图片的toast
-     * @param text
-     * @param res
-     */
-   /* public void showToastWithImg(String text,int res) {
-        ToastUitl.showToastWithImg(text,res);
-    }*/
-    /**
-     * 网络访问错误提醒
-     */
-    /*public void showNetErrorTip() {
-        ToastUitl.showToastWithImg(getText(R.string.net_error).toString(),R.drawable.ic_wifi_off);
-    }
-    public void showNetErrorTip(String error) {
-        ToastUitl.showToastWithImg(error,R.drawable.ic_wifi_off);
-    }*/
 
 
     protected void setFullScreen(boolean FullScreen){
@@ -223,9 +220,6 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
     }
-
-
-
 
    /* ImmersionBar.with(this)
             .transparentStatusBar()  //透明状态栏，不写默认透明色

@@ -6,13 +6,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.moudletest.R;
-import com.lantel.home.mvp.HomeContract;
-import com.lantel.home.mvp.HomeModel;
-import com.lantel.home.mvp.HomePresenter;
 import com.xiao360.baselibrary.base.BaseFragmentPresenter;
 import com.xiao360.baselibrary.base.BaseMVPActivity;
 import com.xiao360.baselibrary.base.BaseMVPFragment;
-import com.xiao360.baselibrary.util.LogUtils;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModel;
@@ -22,7 +18,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 
-public abstract class TbHeadListFragment<T extends BaseFragmentPresenter,E extends ViewModel> extends BaseMVPFragment<T,E> {
+public abstract class TbHeadListFragment<T extends BaseFragmentPresenter, E extends ViewModel> extends BaseMVPFragment<T, E> {
     @BindView(R.id.top_img_left)
     protected ImageView topImgLeft;
     @BindView(R.id.top_redpoint)
@@ -35,6 +31,8 @@ public abstract class TbHeadListFragment<T extends BaseFragmentPresenter,E exten
     protected Toolbar toolbar;
     @BindView(R.id.recycleview)
     protected RecyclerView recycleview;
+    @BindView(R.id.statebarView)
+    protected View statebarView;
 
     @Override
     protected int getStateBarviewID() {

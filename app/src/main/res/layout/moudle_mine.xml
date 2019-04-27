@@ -2,5 +2,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<include layout="@layout/moudle_home_mine"/>
+<include layout="@layout/layout_toolbar_recycleview"/>
 </RelativeLayout>

@@ -13,13 +13,6 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
-        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ AROUTER_MODULE_NAME : project.getName() ]
-            }
-        }
     }
 
     buildTypes {
@@ -29,21 +22,13 @@ android {
         }
     }
 
-    sourceSets {
-        main{
-            if (!rootProject.ext.isMoudle) {
-                manifest.srcFile 'src/main/moudle/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-            }
-        }
-    }
-
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+   // implementation 'com.android.support:appcompat-v7:28.0.0'
+    //testImplementation 'junit:junit:4.12'
+   // androidTestImplementation 'com.android.support.test:runner:1.0.2'
+   // androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api project(':common')
-    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
-    annotationProcessor rootProject.ext.dependencies.butterknifecompiler
 }

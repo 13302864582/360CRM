@@ -6,12 +6,7 @@ import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.Unique;
 import org.greenrobot.greendao.annotation.Generated;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Entity
-@Getter
-@Setter
 public class Student {
     //不能用int
     @Id(autoincrement = true)

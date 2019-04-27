@@ -7,6 +7,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     defaultConfig {
         applicationId "com.fz.app"
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -14,45 +15,26 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    /*sourceSets {
-     main{
-         if (rootProject.ext.moduleShopMall) {
-             manifest.srcFile 'src/main/module/AndroidManifest.xml'
-         } else {
-             manifest.srcFile 'src/main/AndroidManifest.xml'
-             java {
-                 //排除java/debug文件夹下的所有文件
-                 exclude '*module'
-             }
-         }
-         manifest.srcFile 'AndroidManifest.xml'
-         java.srcDirs = ['src']
-         resources.srcDirs = ['src/main/res']
-         aidl.srcDirs = ['src']
-         renderscript.srcDirs = ['src']
-         res.srcDirs = ['res/main/res']
-         assets.srcDirs = ['assets'] }
-    }*/
     }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    if (!rootProject.ext.isMoudle) {
+    /*if (!rootProject.ext.isMoudle) {
         implementation project(':moudleb')
-    }
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    }*/
+    annotationProcessor rootProject.ext.dependencies.glideCompiler
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
 
-    implementation 'com.youth.banner:banner:1.4.10'  //轮播图
-    /*添加依赖*/
-    implementation 'com.github.yuzhiqiang1993:zxing:2.2.5' //二维码
+    implementation rootProject.ext.dependencies.banner
+
+    implementation rootProject.ext.dependencies.zxing
 }
 
 

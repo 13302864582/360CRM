@@ -56,7 +56,7 @@ public class FunctionBlockAdapter extends BaseRecyclerViewAdapter<FunctionItem> 
     }
 
     @Override
-    protected void bindViewHolder(BaseViewHolder holder, FunctionItem data, int position, int viewType) {
+    protected void bindViewHolder(BaseViewHolder holder, FunctionItem data, final int position, int viewType) {
         FunctionItemHolder functionItemHolder = (FunctionItemHolder) holder;
         int rid = context.getResources().getIdentifier(data.imageUrl,"drawable",context.getPackageName());
         setImage(rid, functionItemHolder.iv);

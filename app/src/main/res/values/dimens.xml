@@ -23,7 +23,7 @@
     <dimen name="mine_head_height">190dp</dimen>
 
     <!--蓝色背景高度-->
-    <dimen name="mine_head_bg_blue">145dp</dimen>
+    <dimen name="mine_head_bg_blue">117dp</dimen>
 
     <!--白色卡片高度-->
     <dimen name="mine_head_card_height">157dp</dimen>
@@ -35,6 +35,7 @@
     <dimen name="top_title">18sp</dimen>
 
     <!--左右小图标宽高，左右边距，顶部边距-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="top_img_width">24dp</dimen>
     <dimen name="top_img_height">24dp</dimen>
     <dimen name="top_img_marginHorizontal">19dp</dimen>
@@ -106,8 +107,8 @@
     <dimen name="home_top_card_bg_img">170dp</dimen>
 
     <!--AD广告样式-->
-    <dimen name="home_ad_margin">16dp</dimen>
-    <dimen name="home_ad_height">158dp</dimen>
+    <dimen name="home_ad_margin">14dp</dimen>
+    <dimen name="home_ad_height">160dp</dimen>
     <dimen name="home_ad_item">188dp</dimen>
 
     <!--主页菜单样式-->
@@ -116,4 +117,8 @@
     <dimen name="home_menu_img_height">30dp</dimen>
     <dimen name="home_menu_img_marginBottom">10dp</dimen>
     <dimen name="home_menu_item_height">85dp</dimen>
+
+    <dimen name="red_point_radius">1dp</dimen>
+
+    <dimen name="statebar_height">24dp</dimen>
 </resources>

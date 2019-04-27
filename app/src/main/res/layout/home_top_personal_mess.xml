@@ -10,7 +10,7 @@
         android:id="@+id/top_bg_img_blue"
         android:layout_width="0dp"
         android:layout_height="@dimen/mine_head_bg_blue"
-        android:background="@mipmap/my_head_top_blue"
+        android:background="@mipmap/home_head_top_blue"
         android:scaleType="centerCrop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
