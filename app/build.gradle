@@ -26,9 +26,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    /*if (!rootProject.ext.isMoudle) {
-        implementation project(':moudleb')
-    }*/
+    if (!rootProject.ext.isMoudle) {
+        implementation project(':common')
+    }
     annotationProcessor rootProject.ext.dependencies.glideCompiler
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
 
