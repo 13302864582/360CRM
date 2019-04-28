@@ -2,16 +2,10 @@ package com.example.moudletest;
 
 import com.xiao360.baselibrary.base.BaseActivity;
 import com.xiao360.baselibrary.circleMenu.GooeyMenu;
-import butterknife.BindView;
 
 public class MainMVPActivity extends BaseActivity implements GooeyMenu.GooeyMenuInterface {
     /*@BindView(R2.id.gooey_menu)
     GooeyMenu gooeyMenu;*/
-
-    @Override
-    protected boolean isFitsSystemWindows() {
-        return true;
-    }
 
     @Override
     public int getLayoutId() {

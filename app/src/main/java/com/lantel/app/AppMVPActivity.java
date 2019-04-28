@@ -27,6 +27,11 @@ public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> impl
     private int mLastNavId = -1;
 
     @Override
+    protected int getStateBarviewID() {
+        return -1;
+    }
+
+    @Override
     protected AppModel getModel() {
         return FindModel(AppModel.class);
     }

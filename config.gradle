@@ -1,5 +1,5 @@
 ext{
- isMoudle = false
+ isMoudle = true
 
  android = [
          applicationId: "com.example.moudletest",
@@ -47,6 +47,8 @@ ext{
 
          // 组件路由，Arouter
          arouter : "com.alibaba:arouter-api:1.4.1" ,
+
+         arouterCompiler : "com.alibaba:arouter-compiler:1.2.2",
 
          // 组件事件总线，modulebus
          modulebus : "com.cangwang.core:modulebus:2.0.0",

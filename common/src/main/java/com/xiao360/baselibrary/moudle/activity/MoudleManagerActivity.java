@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import androidx.annotation.Nullable;
 import androidx.collection.ArrayMap;
-
+//TODO 业务模块化工作，暂时搁置，后续完善
 public abstract class MoudleManagerActivity extends RxAppCompatActivity {
     private ActivityMoudleManager moudleManager;
 

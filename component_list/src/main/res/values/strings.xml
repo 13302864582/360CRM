@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Component_List</string>
+    <string name="default_count">0</string>
+    <string name="all_list">所有名单</string>
+    <string name="wait_confirm">待确认</string>
+    <string name="finished">已成交</string>
+    <string name="not_finish_yet">未成交</string>
 </resources>

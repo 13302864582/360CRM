@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--模块：我的   菜单标题-->
+    <string-array name="mine_menu_title">
+        <item>mine_my_file</item>
+        <item>mine_my_channel</item>
+        <item>mine_my_output</item>
+        <item>mine_role_permission</item>
+        <item>mine_help_doc</item>
+    </string-array>
+</resources>

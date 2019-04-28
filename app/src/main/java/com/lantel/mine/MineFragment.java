@@ -1,7 +1,6 @@
 package com.lantel.mine;
 
 import android.view.View;
-
 import com.example.moudletest.R;
 import com.lantel.AppConfig;
 import com.lantel.common.fragment.TbHeadListFragment;

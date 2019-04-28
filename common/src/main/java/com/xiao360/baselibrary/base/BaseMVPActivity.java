@@ -3,17 +3,16 @@ package com.xiao360.baselibrary.base;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
-
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.cangwang.core.ModuleBus;
-import com.example.baselibrary.R;
 import com.xiao360.baselibrary.util.AppManager;
 import com.xiao360.baselibrary.util.TUtil;
 import com.xiao360.baselibrary.util.ToastUitl;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
@@ -41,6 +40,9 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         setContentView(getLayoutId());
         //ButterKnife绑定注入
         ButterKnife.bind(this);
+
+        if(getStateBarviewID()!=-1)
+         findViewById(getStateBarviewID()).setVisibility(Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT? View.GONE:View.VISIBLE);
 
         //模块路由绑定注入
         ARouter.getInstance().inject(this);
@@ -71,6 +73,8 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         //初始化view视图
         this.initView();
     }
+
+    protected abstract int getStateBarviewID();
 
     protected abstract E getModel();
 

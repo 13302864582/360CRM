@@ -1,22 +1,17 @@
 package com.lantel.common.fragment;
 
-
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.moudletest.R;
 import com.xiao360.baselibrary.base.BaseFragmentPresenter;
-import com.xiao360.baselibrary.base.BaseMVPActivity;
 import com.xiao360.baselibrary.base.BaseMVPFragment;
-
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.OnClick;
-
 
 public abstract class TbHeadListFragment<T extends BaseFragmentPresenter, E extends ViewModel> extends BaseMVPFragment<T, E> {
     @BindView(R.id.top_img_left)
@@ -47,7 +42,6 @@ public abstract class TbHeadListFragment<T extends BaseFragmentPresenter, E exte
     @Override
     protected void initView() {
         topTitle.setText(getString(getTitle()));
-        ((BaseMVPActivity) getActivity()).setSupportActionBar(toolbar);
         recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
         recycleview.setAdapter(getAdapter());
         initViewSelf();

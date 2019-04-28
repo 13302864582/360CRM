@@ -31,16 +31,6 @@
     <dimen name="mine_head_card_marginEnd">6dp</dimen>
     <dimen name="mine_head_card_paddingBottom">6dp</dimen>
 
-    <!--顶部标题-->
-    <dimen name="top_title">18sp</dimen>
-
-    <!--左右小图标宽高，左右边距，顶部边距-->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="top_img_width">24dp</dimen>
-    <dimen name="top_img_height">24dp</dimen>
-    <dimen name="top_img_marginHorizontal">19dp</dimen>
-    <dimen name="top_img_margin_top">34dp</dimen>
-
     <!--圆形图标宽高，顶部边距-->
     <dimen name="top_img_circle_size">63dp</dimen>
     <dimen name="top_img_circle_marginTop">11dp</dimen>
@@ -67,10 +57,7 @@
     <dimen name="top_personal_list_position_marginRight">39dp</dimen>
     <dimen name="top_personal_list_position_marginLeft">68dp</dimen>
 
-    <!--消息红点，大小，边距-->
-    <dimen name="redpoint_radis">4dp</dimen>
-    <dimen name="top_redpointmarginLeft">39dp</dimen>
-    <dimen name="top_redpointmarginTop">16dp</dimen>
+
 
     <!--===========================================模块：主页   列表 ===================================================-->
     <!--头部局高度-->
@@ -120,5 +107,5 @@
 
     <dimen name="red_point_radius">1dp</dimen>
 
-    <dimen name="statebar_height">24dp</dimen>
+
 </resources>

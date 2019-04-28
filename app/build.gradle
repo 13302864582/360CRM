@@ -26,14 +26,12 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    if (!rootProject.ext.isMoudle) {
+    if (rootProject.ext.isMoudle) {
         implementation project(':common')
     }
     annotationProcessor rootProject.ext.dependencies.glideCompiler
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
-
     implementation rootProject.ext.dependencies.banner
-
     implementation rootProject.ext.dependencies.zxing
 }
 
