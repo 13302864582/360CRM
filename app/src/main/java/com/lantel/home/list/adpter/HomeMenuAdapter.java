@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.example.moudletest.R;
 import com.lantel.home.list.holder.MenuItemViewHolder;
+import com.lantel.home.list.listener.onMenuMoreListener;
 import com.lantel.mine.list.model.MenuItemModel;
 import com.xiao360.baselibrary.image.GlideUtils;
 import com.xiao360.baselibrary.listview.BaseRecyclerViewAdapter;
 import com.xiao360.baselibrary.listview.BaseViewHolder;
+
+
 import java.util.List;
 
 /**
@@ -32,14 +35,9 @@ public class HomeMenuAdapter extends BaseRecyclerViewAdapter<MenuItemModel>{
     /**
      * 点击事件
      */
-    public interface OnMenuClickListener {
-        void onMenuClick(int action);
-        void onMoreClick();
-    }
+    private onMenuMoreListener mListener;
 
-    private OnMenuClickListener mListener;
-
-    public void setOnMenuClickListener(OnMenuClickListener mListener) {
+    public void setOnMenuClickListener(onMenuMoreListener mListener) {
         this.mListener = mListener;
     }
 
@@ -51,7 +49,19 @@ public class HomeMenuAdapter extends BaseRecyclerViewAdapter<MenuItemModel>{
     @Override
     protected void bindViewHolder(BaseViewHolder holder, final MenuItemModel data, int position, int viewType) {
         MenuItemViewHolder itemViewHolder = (MenuItemViewHolder) holder;
-        if(position == getItemCount()-1){
+        boolean isLast = isLastPosition(position);
+        itemViewHolder.title.setText(isLast?getString(R.string.more):data.getTitle());
+        GlideUtils.loadImageView(context,isLast?R.mipmap.more:data.getIcon(),itemViewHolder.icon);
+        itemViewHolder.itemView.setOnClickListener((View v)-> {
+                if(mListener!=null){
+                    if(isLast){
+                        mListener.onMoreClick();
+                    }else {
+                        mListener.onItemClick(data.getFlag_action());
+                    }
+                }
+        });
+       /* if(isLastPosition(position)){
             itemViewHolder.title.setText(getString(R.string.more));
             GlideUtils.loadImageView(context,R.mipmap.more,itemViewHolder.icon);
             itemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -68,10 +78,14 @@ public class HomeMenuAdapter extends BaseRecyclerViewAdapter<MenuItemModel>{
                 @Override
                 public void onClick(View v) {
                     if(mListener!=null)
-                        mListener.onMenuClick(data.getFlag_action());
+                        mListener.onItemClick(data.getFlag_action());
                 }
             });
-        }
+        }*/
+    }
+
+    private boolean isLastPosition(int position) {
+        return position == getItemCount()-1;
     }
 
     @Override

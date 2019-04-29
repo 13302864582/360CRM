@@ -2,19 +2,13 @@ package com.lantel.home.list.adpter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.moudletest.R;
 import com.lantel.AppConfig;
 import com.lantel.home.list.holder.ADViewHolder;
 import com.lantel.home.list.holder.HomeHeadViewHolder;
-import com.lantel.home.list.holder.MenuItemViewHolder;
 import com.lantel.home.list.holder.MenuViewHolder;
+import com.lantel.home.list.listener.onMenuMoreListener;
 import com.lantel.home.list.model.ADModel;
 import com.lantel.home.list.model.HeaderBean;
 import com.lantel.home.list.model.MenuModel;
@@ -23,12 +17,8 @@ import com.xiao360.baselibrary.image.GlideUtils;
 import com.xiao360.baselibrary.listview.BaseRecyclerViewAdapter;
 import com.xiao360.baselibrary.listview.BaseViewHolder;
 import com.youth.banner.Banner;
-
 import java.util.List;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by 冯支
@@ -37,11 +27,11 @@ import androidx.recyclerview.widget.RecyclerView;
  * Time: 18:18
  */
 public class HomeRecycleViewAdapter extends BaseRecyclerViewAdapter<BaseModel> {
-    public void setmListener(HomeMenuAdapter.OnMenuClickListener mListener) {
+    public void setmListener(onMenuMoreListener mListener) {
         this.mListener = mListener;
     }
 
-    private HomeMenuAdapter.OnMenuClickListener mListener;
+    private onMenuMoreListener mListener;
 
 
     /**

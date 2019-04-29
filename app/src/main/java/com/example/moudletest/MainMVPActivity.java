@@ -46,7 +46,7 @@ public class MainMVPActivity extends BaseActivity implements GooeyMenu.GooeyMenu
 
     @Override
     public int getLayoutId() {
-        return com.example.moudleb.R.layout.activity_main_b;
+        
     }
 
     @Override

@@ -9,11 +9,12 @@ import com.lantel.mine.mvp.MineContract;
 import com.lantel.mine.mvp.MineModel;
 import com.lantel.mine.mvp.MinePresenter;
 import com.xiao360.baselibrary.base.BaseModel;
+import com.xiao360.baselibrary.listview.listener.OnMenuClickListener;
 import com.xiao360.baselibrary.util.LogUtils;
 import java.util.ArrayList;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MineFragment extends TbHeadListFragment<MinePresenter, MineModel> implements MineContract.View, MineRecycleViewAdapter.OnMenuClickListener {
+public class MineFragment extends TbHeadListFragment<MinePresenter, MineModel> implements MineContract.View, OnMenuClickListener {
     private MineRecycleViewAdapter adapter;
 
     @Override
@@ -48,8 +49,23 @@ public class MineFragment extends TbHeadListFragment<MinePresenter, MineModel> i
     }
 
     @Override
-    public void onMenuClick(int action) {
-        switch (action) {
+    public void notifyData(ArrayList<BaseModel> list) {
+        adapter.refreshData(list);
+    }
+
+    @Override
+    protected MineModel getModel() {
+        return FindModel(MineModel.class);
+    }
+
+    @Override
+    public void initPresenter() {
+        mPresenter.setVM(this, mModel);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        switch (position) {
             case AppConfig.ACTION_FILE:
                 LogUtils.d("ACTION_FILE");
                 break;
@@ -66,20 +82,5 @@ public class MineFragment extends TbHeadListFragment<MinePresenter, MineModel> i
                 LogUtils.d("ACTION_FEEDBACK");
                 break;
         }
-    }
-
-    @Override
-    public void notifyData(ArrayList<BaseModel> list) {
-        adapter.refreshData(list);
-    }
-
-    @Override
-    protected MineModel getModel() {
-        return FindModel(MineModel.class);
-    }
-
-    @Override
-    public void initPresenter() {
-        mPresenter.setVM(this, mModel);
     }
 }

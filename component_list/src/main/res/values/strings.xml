@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">Component_List</string>
+    <!--默認數量0-->
     <string name="default_count">0</string>
+
+    <!--市場名單標題-->
     <string name="all_list">所有名单</string>
     <string name="wait_confirm">待确认</string>
     <string name="finished">已成交</string>
     <string name="not_finish_yet">未成交</string>
+
+    <!--客戶跟單標題-->
+    <string name="not_coming_door">未上门</string>
+    <string name="auditioned">已试听</string>
+    <string name="has_visited">已到访</string>
+
 </resources>

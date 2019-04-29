@@ -6,8 +6,7 @@
     <dimen name="mine_itemIcon_left_height">20dp</dimen>
     <dimen name="mine_itemIcon_left_marginStart">29dp</dimen>
 
-    <!--列表中的item布局，中间文字属性-->
-    <dimen name="mine_itemText_size">15sp</dimen>
+    <!--列表中的item布局属性-->
     <dimen name="mine_itemText_marginStart">13dp</dimen>
 
     <!--列表中的item布局，右边边图标属性-->
@@ -23,7 +22,7 @@
     <dimen name="mine_head_height">190dp</dimen>
 
     <!--蓝色背景高度-->
-    <dimen name="mine_head_bg_blue">117dp</dimen>
+    <dimen name="mine_head_bg_blue">68dp</dimen>
 
     <!--白色卡片高度-->
     <dimen name="mine_head_card_height">157dp</dimen>
@@ -35,8 +34,7 @@
     <dimen name="top_img_circle_size">63dp</dimen>
     <dimen name="top_img_circle_marginTop">11dp</dimen>
 
-    <!--用户名字，字体大小，边距-->
-    <dimen name="top_personal_name">17sp</dimen>
+    <!--用户名字边距-->
     <dimen name="top_personal_name_marginTop">47dp</dimen>
     <dimen name="top_personal_area_marginTop">76dp</dimen>
 
@@ -44,9 +42,6 @@
     <dimen name="top_img_position">17dp</dimen>
     <dimen name="top_personal_position_marginLeft">39dp</dimen>
     <dimen name="top_personal_position_marginTop">110dp</dimen>
-
-    <!--职位信息，字体大小-->
-    <dimen name="mine_text_position">13sp</dimen>
 
     <!--职位信息，item中间的划线宽度，长短-->
     <dimen name="common_vew_raw_padding">0.5dp</dimen>
@@ -56,7 +51,6 @@
     <dimen name="top_personal_list_position_height">43dp</dimen>
     <dimen name="top_personal_list_position_marginRight">39dp</dimen>
     <dimen name="top_personal_list_position_marginLeft">68dp</dimen>
-
 
 
     <!--===========================================模块：主页   列表 ===================================================-->
@@ -72,9 +66,7 @@
     <dimen name="home_top_name_marginTop">27dp</dimen>
 
     <!--头部地区边距-->
-    <dimen name="top_personal_area">11sp</dimen>
     <dimen name="home_top_area_marginTop">17dp</dimen>
-    <dimen name="home_top_area_text">13sp</dimen>
 
     <!--头部地区切换图标-->
     <dimen name="top_area_img_width">13dp</dimen>
@@ -83,8 +75,6 @@
     <dimen name="top_area_img_marginTop">21dp</dimen>
 
     <!--头部待办提醒等，统一样式-->
-    <dimen name="home_botom_schedule_text">11sp</dimen>
-    <dimen name="home_top_schedule_text">23sp</dimen>
     <dimen name="top_num_txt_top">5dp</dimen>
     <dimen name="top_num_txt_margin">48dp</dimen>
     <dimen name="top_txt_marginTop">4dp</dimen>
@@ -99,13 +89,25 @@
     <dimen name="home_ad_item">188dp</dimen>
 
     <!--主页菜单样式-->
-    <dimen name="home_menu_text">11sp</dimen>
     <dimen name="home_menu_img_width">25dp</dimen>
     <dimen name="home_menu_img_height">30dp</dimen>
     <dimen name="home_menu_img_marginBottom">10dp</dimen>
     <dimen name="home_menu_item_height">85dp</dimen>
-
     <dimen name="red_point_radius">1dp</dimen>
 
-
+    <!--===========================================字体 ===================================================-->
+    <!--职位信息，字体大小-->
+    <dimen name="mine_text_position">13sp</dimen>
+    <!--头部待办提醒等，统一样式-->
+    <dimen name="home_botom_schedule_text">11sp</dimen>
+    <dimen name="home_top_schedule_text">23sp</dimen>
+    <!--主页菜单-->
+    <dimen name="home_menu_text">11sp</dimen>
+    <!--列表中的item布局中间文字属性-->
+    <dimen name="mine_itemText_size">15sp</dimen>
+    <!--用户名字字体大小-->
+    <dimen name="top_personal_name">17sp</dimen>
+    <!--头部地区边距-->
+    <dimen name="top_personal_area">11sp</dimen>
+    <dimen name="home_top_area_text">13sp</dimen>
 </resources>

@@ -9,6 +9,7 @@ import com.lantel.AppConfig;
 import com.lantel.common.fragment.TbHeadListFragment;
 import com.lantel.home.list.adpter.HomeMenuAdapter;
 import com.lantel.home.list.adpter.HomeRecycleViewAdapter;
+import com.lantel.home.list.listener.onMenuMoreListener;
 import com.lantel.home.mvp.HomeContract;
 import com.lantel.home.mvp.HomeModel;
 import com.lantel.home.mvp.HomePresenter;
@@ -126,13 +127,13 @@ public class HomeFragment extends TbHeadListFragment<HomePresenter, HomeModel> i
          * 设置主页适配器
          */
         adapter = new HomeRecycleViewAdapter(getContext(), null);
-        adapter.setmListener(new HomeMenuAdapter.OnMenuClickListener() {
+        adapter.setmListener(new onMenuMoreListener() {
             /**
              * 菜单点击选项
              */
             @Override
-            public void onMenuClick(int action) {
-                LogUtils.d(action + "===============onMenuClick");
+            public void onItemClick(int position) {
+                LogUtils.d(position + "===============onMenuClick");
             }
 
             /**

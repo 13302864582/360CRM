@@ -24,4 +24,5 @@
     <!--我的，顶部用户名，地区-->
     <color name="top_personal_area">#B4B4B4</color>
     <color name="top_personal_name">#267BEC</color>
+    <color name="circle_outside">#ccffffff</color>
 </resources>

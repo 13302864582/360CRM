@@ -1,4 +1,4 @@
-package com.lantel.common.image;
+package com.xiao360.baselibrary.image;
 
 
 import android.content.res.Resources;
