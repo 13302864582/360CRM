@@ -3,6 +3,10 @@ package com.xiao360.baselibrary.listview;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import com.xiao360.baselibrary.base.BaseModel;
+
+import java.util.ArrayList;
 import java.util.List;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -77,5 +81,14 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
 
     public String getString(int str) {
         return null == context?null:context.getResources().getString(str);
+    }
+
+    public int getColor(int color) {
+        return null == context?null:context.getResources().getColor(color);
+    }
+
+    public void addDatas(List data) {
+        if(datas != null && data != null)
+            datas.addAll(data);
     }
 }

@@ -6,19 +6,50 @@
     <!--列表日期项属性-->
     <dimen name="title_day_margin">8dp</dimen>
     <dimen name="list_toptText_margin">5dp</dimen>
-    <dimen name="day_title_height">22dp</dimen>
+    <dimen name="day_title_height">25dp</dimen>
 
     <!--列表默认图片属性-->
     <dimen name="list_item_height">80dp</dimen>
     <dimen name="list_img_text">19sp</dimen>
     <dimen name="list_img_marginLeft">20dp</dimen>
     <dimen name="list_img_size">40dp</dimen>
+    <dimen name="list_default_img_size">38dp</dimen>
+    <dimen name="list_default_img_margin">1dp</dimen>
+
+    <!--列表name属性-->
+    <dimen name="list_item_name_margin">14dp</dimen>
+    <dimen name="list_item_stateMarginCenter">3dp</dimen>
+    <dimen name="list_item_remark_mr">38dp</dimen>
+    <dimen name="list_item_state_mr">20dp</dimen>
+
+    <!--列表分割线属性-->
+    <dimen name="line">0.75dp</dimen>
+    <dimen name="line_margin">35dp</dimen>
+
+    <!--筛选-->
+    <dimen name="filter_img_width">15dp</dimen>
+    <dimen name="filter_img_height">18dp</dimen>
+    <dimen name="filter_img_margin_right">26dp</dimen>
+
+    <!--searchview-->
+    <dimen name="search_filter_height">40dp</dimen>
+    <dimen name="filter_search_marginLeft">22dp</dimen>
+    <dimen name="filter_search_marginRight">14dp</dimen>
    <!-- =================================================字体========================================================-->
     <!--列表日期项属性-->
     <dimen name="title_day">13sp</dimen>
+
     <!--名单顶部tab属性-->
     <dimen name="list_top_higher">14sp</dimen>
     <dimen name="list_top_below">11sp</dimen>
 
+    <!--列表name属性-->
+    <dimen name="list_item_name">12sp</dimen>
+    <dimen name="list_item_phone">11sp</dimen>
+    <dimen name="list_item_remarks">13sp</dimen>
+    <dimen name="list_item_state">13sp</dimen>
 
+    <!--search属性-->
+    <dimen name="search_txt">18sp</dimen>
+    <dimen name="search_btn">13sp</dimen>
 </resources>

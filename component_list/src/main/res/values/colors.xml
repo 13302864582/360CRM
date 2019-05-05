@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--名单顶部tab属性-->
     <color name="list_top_higher">#3E3E3E</color>
     <color name="list_top_below">#3B3B3B</color>
+
+    <!--title布局日期属性-->
     <color name="title_day">#3E3E3E</color>
+    <color name="title_item_bg">#eef2f8</color>
+
+    <!--item布局属性-->
     <color name="list_img_text">@color/white</color>
+    <color name="list_item_name">#3E3E3E</color>
+    <color name="list_item_phone">#A8A8A8</color>
+    <color name="list_item_remarks">#a4a4a4</color>
+
+    <!--item名单状态属性颜色-->
+    <color name="list_item_state_not_deal">#64c861</color>
+    <color name="list_item_state_completed">#ec635d</color>
+    <color name="list_item_state_wait_confirm">#f8cd59</color>
+    <color name="line">#ededed</color>
+
+    <!--search-->
+    <color name="search_btn">#b7b7b7</color>
 </resources>

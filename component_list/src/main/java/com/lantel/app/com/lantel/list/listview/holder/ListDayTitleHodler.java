@@ -2,7 +2,6 @@ package com.lantel.app.com.lantel.list.listview.holder;
 
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.component_list.R;
 import com.xiao360.baselibrary.listview.BaseViewHolder;
 import androidx.annotation.NonNull;

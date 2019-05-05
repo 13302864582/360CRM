@@ -2,31 +2,113 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height">
-
-    <Button
-        android:visibility="gone"
+    <FrameLayout
+        android:id="@+id/img_frame"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="@dimen/list_img_marginLeft"
-        android:layout_width="@dimen/list_img_size"
-        android:layout_height="@dimen/list_img_size"
-        android:text="文"
-        android:textColor="@color/list_img_text"
-        android:textSize="@dimen/list_img_text"
-        android:background="@drawable/img_gray_shape"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <RelativeLayout
+            android:layout_width="@dimen/list_img_size"
+            android:layout_height="@dimen/list_img_size">
+            <ImageView
+                android:layout_margin="@dimen/list_default_img_margin"
+                android:layout_centerInParent="true"
+                android:background="@drawable/img_gray_shape"
+                android:layout_width="@dimen/list_default_img_size"
+                android:layout_height="@dimen/list_default_img_size" />
+            <TextView
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:id="@+id/default_img"
+                android:layout_width="@dimen/list_img_size"
+                android:layout_height="@dimen/list_img_size"
+                android:text="文"
+                android:textColor="@color/list_img_text"
+                android:textSize="@dimen/list_img_text"
+                />
+        </RelativeLayout>
 
-    <ImageView
-        app:layout_constraintLeft_toLeftOf="parent"
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/circle_img"
+            android:layout_width="@dimen/list_img_size"
+            android:layout_height="@dimen/list_img_size"
+            android:textColor="@color/list_img_text"
+            android:textSize="@dimen/list_img_text"
+            android:background="@drawable/img_gray_shape"/>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/left"
+        style="@style/LineV_wrap_wh"
+        android:layout_marginLeft="@dimen/list_item_name_margin"
+        app:layout_constraintLeft_toRightOf="@id/img_frame"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="@dimen/list_img_marginLeft"
-        android:layout_width="@dimen/list_img_size"
-        android:layout_height="@dimen/list_img_size"
-        android:textColor="@color/list_img_text"
-        android:textSize="@dimen/list_img_text"
-        android:background="@drawable/img_gray_shape"/>
+        >
+        <TextView
+            android:id="@+id/name"
+            android:text="阿园"
+            style="@style/limit_wrap_wh"
+            android:textSize="@dimen/list_item_name"
+            android:textColor="@color/list_item_name"
+            />
+        <TextView
+            android:id="@+id/phone"
+            android:text="13302864587"
+            style="@style/line_wrap_wh"
+            android:textColor="@color/list_item_phone"
+            android:textSize="@dimen/list_item_phone"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+    android:id="@+id/right"
+    android:orientation="vertical"
+    app:layout_constraintLeft_toRightOf="@+id/left"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginRight="38dp"
+    android:layout_marginLeft="38dp"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content">
+    <TextView
+        style="@style/limit_right_wrap_wh"
+        android:layout_marginRight="@dimen/list_item_state_mr"
+        android:id="@+id/state"
+        android:layout_marginBottom="@dimen/list_item_stateMarginCenter"
+        android:text="未成交"
+        android:textColor="@color/list_item_state_not_deal"
+        android:textSize="@dimen/list_item_state" />
+
+    <TextView
+        android:minWidth="4dp"
+        style="@style/limit_right_wrap_wh"
+        android:id="@+id/remarks"
+        android:layout_marginTop="@dimen/list_item_stateMarginCenter"
+        android:text="想要报名周三去参加"
+        android:textColor="@color/list_item_remarks"
+        android:textSize="@dimen/list_item_remarks" />
+</LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:background="@color/line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="@dimen/line_margin"
+        android:layout_marginRight="@dimen/line_margin"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/line"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

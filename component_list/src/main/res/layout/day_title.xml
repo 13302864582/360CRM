@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="@dimen/day_title_height">
-
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/day_title_height"
+    android:background="@color/title_item_bg"
+    >
     <LinearLayout
         android:layout_centerVertical="true"
         android:layout_marginLeft="24dp"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        style="@style/LineH_wrap_wh"
+        >
         <TextView
             android:id="@+id/title_day"
             android:text="周五"
-            android:gravity="left"
+            style="@style/left_wrap_wh"
             android:textColor="@color/title_day"
             android:textSize="@dimen/title_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            />
 
         <TextView
             android:id="@+id/title_date"
@@ -24,9 +24,7 @@
             android:textColor="@color/title_day"
             android:textSize="@dimen/title_day"
             android:layout_marginLeft="@dimen/title_day_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
+            style="@style/wrap_wh"
+           />
     </LinearLayout>
 </RelativeLayout>
