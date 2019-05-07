@@ -14,8 +14,13 @@
     <string name="auditioned">已试听</string>
     <string name="has_visited">已到访</string>
 
-
     <!--搜索-->
     <string name="search">搜索</string>
+    <string name="done">完成</string>
+    <string name="edit">编辑</string>
+    <string name="add_mess">新增信息</string>
+    <string name="personal_mess">个人信息</string>
+
+
 
 </resources>

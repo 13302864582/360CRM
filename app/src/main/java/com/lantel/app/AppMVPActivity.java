@@ -27,6 +27,11 @@ public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> impl
     private int mLastNavId = -1;
 
     @Override
+    protected BarHide hideBar() {
+        return BarHide.FLAG_SHOW_BAR;
+    }
+
+    @Override
     protected int getStateBarviewID() {
         return -1;
     }
@@ -88,5 +93,4 @@ public class AppMVPActivity extends BaseMVPActivity<AppPresenter, AppModel> impl
         NavOptions options = builder.build();
         mNavController.navigate(action_id,null,options);
     }
-
 }

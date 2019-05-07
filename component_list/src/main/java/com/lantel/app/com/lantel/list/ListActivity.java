@@ -90,6 +90,11 @@ public class ListActivity extends BaseMVPActivity<ListPresenter, ListModel> impl
     //toolbar标题
     private String toolbarTitle;
 
+    @Override
+    protected BarHide hideBar() {
+        return BarHide.FLAG_SHOW_BAR;
+    }
+
     /**
      * 状态栏id
      */
@@ -189,8 +194,6 @@ public class ListActivity extends BaseMVPActivity<ListPresenter, ListModel> impl
      * 初始化toolbar
      */
     private void initToolbar() {
-        //初始化状态栏
-        ImmersionBar.with(this).hideBar(BarHide.FLAG_SHOW_BAR).init();
         //设置左上图标
         topImgLeft.setImageResource(R.mipmap.ic_audio);
         topImgLeft.setOnClickListener(this);

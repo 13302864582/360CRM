@@ -16,4 +16,19 @@
         <item>@string/has_visited</item>
         <item>@string/finished</item>
     </string-array>
+
+
+    <!--个人信息標題组-->
+    <string-array name="personal_title" >
+        <item>@string/name</item>
+        <item>@string/pet_name</item>
+        <item>@string/sex</item>
+        <item>@string/birth</item>
+        <item>@string/tel_phone</item>
+    </string-array>
+    <string name="name">姓名</string>
+    <string name="pet_name">昵称</string>
+    <string name="sex">性别</string>
+    <string name="birth">出生日期</string>
+    <string name="tel_phone">电话</string>
 </resources>

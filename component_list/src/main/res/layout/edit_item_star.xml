@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:orientation="horizontal">
+    <View
+        android:visibility="invisible"
+        android:id="@+id/item_line"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:layout_marginLeft="@dimen/line_margin"
+        android:layout_marginRight="@dimen/line_margin"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="#5e5e5e"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.cb.ratingbar.CBRatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:starCanTouch="true"
+        app:starCount="5"
+        app:starCoverColor="#ffd162"
+        app:starCoverDir="left_to_right"
+        app:starFillColor="#f2f2f2"
+        app:starMaxProgress="100"
+        app:starProgress="60"
+        app:starSize="30dp"
+        app:starSpace="9dp"
+        app:starUseGradient="false" />
+</androidx.constraintlayout.widget.ConstraintLayout>

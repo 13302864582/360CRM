@@ -14,12 +14,24 @@
     <color name="list_item_phone">#A8A8A8</color>
     <color name="list_item_remarks">#a4a4a4</color>
 
-    <!--item名单状态属性颜色-->
+    <!--市场名单状态属性颜色-->
     <color name="list_item_state_not_deal">#64c861</color>
     <color name="list_item_state_completed">#ec635d</color>
     <color name="list_item_state_wait_confirm">#f8cd59</color>
+
+    <!--客户跟单状态属性颜色-->
+    <color name="list_item_state_Auditioned">#f8cd59</color>
+    <color name="list_item_state_not_coming_door">#64c861</color>
+
     <color name="line">#ededed</color>
 
     <!--search-->
     <color name="search_btn">#b7b7b7</color>
+    <color name="person_toolbar_title">#010714</color>
+    <color name="item_decoration">#eef2f8</color>
+    <color name="remark">#f0f0f0</color>
+    <color name="title">#5e5e5e</color>
+    <color name="list_item_state_has_visited">#b748fe</color>
+
+
 </resources>

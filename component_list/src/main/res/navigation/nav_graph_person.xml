@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/AddFragment"
+    android:id="@+id/nav_graph_person.xml">
+    <!--启动页-->
+    <fragment
+        android:id="@+id/AddFragment"
+        android:name="com.lantel.app.com.lantel.personmess.fragment.AddMessFragment"
+        android:label="fragment_page_add"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/ShowMessFragment"
+        android:name="com.lantel.app.com.lantel.personmess.fragment.ShowMessFragment"
+        android:label="fragment_page_show"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/EditMessFragment"
+        android:name="com.lantel.app.com.lantel.personmess.fragment.EditMessFragment"
+        android:label="fragment_page_edit"
+        >
+    </fragment>
+
+
+    <!--跳转到编辑-->
+    <action
+        android:id="@+id/action_edit"
+        app:destination="@id/EditMessFragment"
+        />
+
+    <!---跳转到个人信息-->
+    <action
+        android:id="@+id/action_show"
+        app:destination="@id/ShowMessFragment"
+        app:clearTask="true"
+        />
+</navigation>

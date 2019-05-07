@@ -21,7 +21,7 @@ public class ListItemModel extends BaseModel {
     public String remarks;
 
     public ListItemModel() {
-        super(Config.MESS_ITEM,"");
+        super(Config.MESS_ITEM, "");
     }
 
     public String getImg() {
@@ -82,6 +82,18 @@ public class ListItemModel extends BaseModel {
             case Config.STATE_COMPLETED:
                 state_txt = R.string.finished;
                 state_color = R.color.list_item_state_completed;
+                break;
+            case Config.STATE_AUDITIONED:
+                state_txt = R.string.auditioned;
+                state_color = R.color.list_item_state_Auditioned;
+                break;
+            case Config.STATE_NOT_COMING_DOOR:
+                state_txt = R.string.not_coming_door;
+                state_color = R.color.list_item_state_not_coming_door;
+                break;
+            case Config.STATE_HAS_VISITED:
+                state_txt = R.string.has_visited;
+                state_color = R.color.list_item_state_has_visited;
                 break;
         }
     }

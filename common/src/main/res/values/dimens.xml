@@ -21,4 +21,5 @@
 
     <!--顶部标题-->
     <dimen name="top_title">18sp</dimen>
+    <dimen name="top_txt_right">14sp</dimen>
 </resources>

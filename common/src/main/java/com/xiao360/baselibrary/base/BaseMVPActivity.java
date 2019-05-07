@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.WindowManager;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.cangwang.core.ModuleBus;
+import com.gyf.immersionbar.BarHide;
+import com.gyf.immersionbar.ImmersionBar;
 import com.xiao360.baselibrary.util.AppManager;
 import com.xiao360.baselibrary.util.TUtil;
 import com.xiao360.baselibrary.util.ToastUitl;
@@ -65,14 +67,22 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
         }
 
         //绑定android生命周期
+        if(mPresenter!=null)
         getLifecycle().addObserver(mPresenter);
 
         //初始化Presenter
         this.initPresenter();
 
+        //初始化状态栏
+        ImmersionBar.with(this)
+                .hideBar(hideBar())
+                .init();
+
         //初始化view视图
         this.initView();
     }
+
+    protected abstract BarHide hideBar();
 
     protected abstract int getStateBarviewID();
 
@@ -224,6 +234,11 @@ public abstract class BaseMVPActivity<T extends BaseActivityPresenter, E extends
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
     }
+
+    protected int getResColor(int color){
+        return getResources().getColor(color);
+    }
+
 
    /* ImmersionBar.with(this)
             .transparentStatusBar()  //透明状态栏，不写默认透明色

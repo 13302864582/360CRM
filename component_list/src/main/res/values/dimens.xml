@@ -35,6 +35,12 @@
     <dimen name="search_filter_height">40dp</dimen>
     <dimen name="filter_search_marginLeft">22dp</dimen>
     <dimen name="filter_search_marginRight">14dp</dimen>
+
+    <!--个人新增-->
+    <dimen name="item_decoration">10dp</dimen>
+    <dimen name="item_remark_marginLeft">34dp</dimen>
+    <dimen name="item_remark_marginTop">13dp</dimen>
+    <dimen name="remark_height">175dp</dimen>
    <!-- =================================================字体========================================================-->
     <!--列表日期项属性-->
     <dimen name="title_day">13sp</dimen>
@@ -52,4 +58,7 @@
     <!--search属性-->
     <dimen name="search_txt">18sp</dimen>
     <dimen name="search_btn">13sp</dimen>
+
+    <!--reamark属性-->
+    <dimen name="item_remark_textsize">17sp</dimen>
 </resources>

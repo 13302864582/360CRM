@@ -53,6 +53,8 @@ dependencies {
 
     api rootProject.ext.dependencies.qiniu // 七牛云上传
 
+    api 'com.contrarywind:Android-PickerView:4.1.8' //滚轮控件
+
     //1.1.0 androidx 版本,SmartRefreshLayout,下拉刷新、上拉加载
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-4'
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-4'

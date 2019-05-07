@@ -1,6 +1,8 @@
 package com.xiao360.baselibrary.base;
 
-public class BaseModel {
+import java.io.Serializable;
+
+public class BaseModel implements Serializable {
     private String title;
 
     private int type;

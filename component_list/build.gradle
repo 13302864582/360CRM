@@ -38,4 +38,5 @@ dependencies {
     api project(':common')
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
     annotationProcessor rootProject.ext.dependencies.arouterCompiler
+    implementation 'com.github.CB-ysx:CBRatingBar:3.0.1'
 }

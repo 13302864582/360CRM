@@ -1,11 +1,6 @@
-package com.lantel.app.com.lantel.personmess.mvp;
+package com.lantel.app.com.lantel.personmess.activity.mvp;
 
-import com.lantel.app.com.app.Config;
-import com.lantel.app.com.lantel.list.listview.model.DayTitleModel;
-import com.lantel.app.com.lantel.list.listview.model.ListItemModel;
-import com.xiao360.baselibrary.base.BaseModel;
 import com.xiao360.baselibrary.util.LogUtils;
-import java.util.ArrayList;
 
 public class PersonPresenter extends PersonContract.Presenter {
     @Override
